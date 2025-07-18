@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Data Platform{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body p-4 text-center">
+            <h1 class="mb-4">Data Generation & Processing</h1>
+            
+            {% if message %}
+            <div class="alert alert-success">{{ message }}</div>
+            {% endif %}
+
+            <form method="post" class="d-flex flex-column align-items-center">
+                <div class="mb-3 w-50">
+                    <label for="num_records" class="form-label">Number of Records to Generate</label>
+                    <input type="number" class="form-control" id="num_records" name="num_records" value="1000" min="1" max="10000">
+                </div>
+                <div>
+                    <button type="submit" name="generate" class="btn btn-primary btn-lg">Generate Data</button>
+                    <button type="submit" name="process" class="btn btn-success btn-lg">Process Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h3>Processed Files</h3>
+        </div>
+        <div class="card-body">
+            {% if processed_files %}
+                <div class="list-group">
+                    {% for file in processed_files %}
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <i class="bi bi-file-earmark-text me-2"></i>
+                                <a href="{{ url_for('view_file', filename=file) }}" class="text-decoration-none fw-bold">{{ file }}</a>
+                            </div>
+                            <a href="{{ url_for('download_file', filename=file) }}" class="btn btn-secondary btn-sm">
+                                <i class="bi bi-download me-1"></i> Download
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-muted text-center">No processed files yet. Generate and process data to see files here.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

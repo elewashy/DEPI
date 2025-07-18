@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}View File: {{ filename }} - Data Platform{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="h3 mb-0">Viewing File: {{ filename }}</h1>
+        </div>
+        <div class="card-body">
+            <form method="get" action="{{ url_for('view_file', filename=filename) }}" class="mb-4 p-3 border rounded bg-light">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="search_name" class="form-control" placeholder="Search by Name..." value="{{ search_name }}">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <select name="filter_city" class="form-select">
+                            <option value="">All Cities</option>
+                            {% for city in cities %}
+                            <option value="{{ city }}" {% if city == filter_city %}selected{% endif %}>{{ city }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select name="filter_salary" class="form-select">
+                            <option value="">All Salary Categories</option>
+                            {% for category in salary_categories %}
+                            <option value="{{ category }}" {% if category == filter_salary %}selected{% endif %}>{{ category }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary w-100">Filter</button>
+                    </div>
+                </div>
+            </form>
+            <div class="table-responsive">
+                {{ data|safe }}
+            </div>
+        </div>
+        <div class="card-footer">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {# First Page Link #}
+                    <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+                        <a class="page-link" href="{{ url_for('view_file', filename=filename, page=1, search_name=search_name, filter_city=filter_city, filter_salary=filter_salary) }}">First</a>
+                    </li>
+                    {# Previous Page Link #}
+                    <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+                        <a class="page-link" href="{{ url_for('view_file', filename=filename, page=page-1, search_name=search_name, filter_city=filter_city, filter_salary=filter_salary) }}">Previous</a>
+                    </li>
+                    {# Page Numbers #}
+                    {% for p in pages_to_show %}
+                    <li class="page-item {% if p == page %}active{% endif %}">
+                        <a class="page-link" href="{{ url_for('view_file', filename=filename, page=p, search_name=search_name, filter_city=filter_city, filter_salary=filter_salary) }}">{{ p }}</a>
+                    </li>
+                    {% endfor %}
+                    {# Next Page Link #}
+                    <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+                        <a class="page-link" href="{{ url_for('view_file', filename=filename, page=page+1, search_name=search_name, filter_city=filter_city, filter_salary=filter_salary) }}">Next</a>
+                    </li>
+                    {# Last Page Link #}
+                    <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+                        <a class="page-link" href="{{ url_for('view_file', filename=filename, page=total_pages, search_name=search_name, filter_city=filter_city, filter_salary=filter_salary) }}">Last</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %} 

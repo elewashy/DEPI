@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Statistics - Data Platform{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class="h2 mb-4">Dashboard - Data Statistics</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card p-3 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="bg-primary text-white p-3 rounded me-3">
+                        <i class="bi bi-people-fill h2 mb-0"></i>
+                    </div>
+                    <div>
+                        <h3 class="h6 text-muted">Total Records</h3>
+                        <p class="h3 mb-0 fw-bold">{{ stats.total_records }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="bg-success text-white p-3 rounded me-3">
+                        <i class="bi bi-currency-dollar h2 mb-0"></i>
+                    </div>
+                    <div>
+                        <h3 class="h6 text-muted">Average Salary</h3>
+                        <p class="h3 mb-0 fw-bold">{{ stats.average_salary }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="bg-warning text-white p-3 rounded me-3">
+                        <i class="bi bi-person-badge-fill h2 mb-0"></i>
+                    </div>
+                    <div>
+                        <h3 class="h6 text-muted">Average Age</h3>
+                        <p class="h3 mb-0 fw-bold">{{ stats.average_age }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="salaryDistributionChart"
+                            data-labels='{{ stats.salary_distribution.keys()|list|tojson }}'
+                            data-values='{{ stats.salary_distribution.values()|list|tojson }}'></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="topCitiesChart"
+                            data-labels='{{ stats.top_cities.keys()|list|tojson }}'
+                            data-values='{{ stats.top_cities.values()|list|tojson }}'></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Salary Distribution Chart (Pie Chart)
+    const salaryCanvas = document.getElementById('salaryDistributionChart');
+    if (salaryCanvas) {
+        const salaryCtx = salaryCanvas.getContext('2d');
+        new Chart(salaryCtx, {
+            type: 'pie',
+            data: {
+                labels: JSON.parse(salaryCanvas.dataset.labels),
+                datasets: [{
+                    label: 'Salary Distribution',
+                    data: JSON.parse(salaryCanvas.dataset.values),
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Salary Distribution'
+                    }
+                }
+            }
+        });
+    }
+
+    // Top 5 Cities Chart (Bar Chart)
+    const citiesCanvas = document.getElementById('topCitiesChart');
+    if (citiesCanvas) {
+        const citiesCtx = citiesCanvas.getContext('2d');
+        new Chart(citiesCtx, {
+            type: 'bar',
+            data: {
+                labels: JSON.parse(citiesCanvas.dataset.labels),
+                datasets: [{
+                    label: 'Number of Employees',
+                    data: JSON.parse(citiesCanvas.dataset.values),
+                    backgroundColor: 'rgba(79, 70, 229, 0.7)',
+                    borderColor: 'rgba(79, 70, 229, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Top 5 Cities by Number of Employees'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+</script>
+{% endblock %} 
