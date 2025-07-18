@@ -44,7 +44,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/elewashy/DEPI/Data_Platform
+    git clone https://github.com/elewashy/DEPI/tree/main/Data_Platform
     cd data_platform
     ```
 
