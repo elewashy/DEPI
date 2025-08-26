@@ -20,8 +20,6 @@ A comprehensive **Retail Analytics & ETL Pipeline System** built with Flask, fea
 - [🔄 Data Flow](#-data-flow)
 - [🗄 Database Schema](#-database-schema)
 - [🔌 API Endpoints](#-api-endpoints)
-- [🤝 Contributing](#-contributing)
-- [📜 License](#-license)
 - [📧 Contact](#-contact)
 
 ## 🎯 Project Overview
@@ -304,22 +302,6 @@ CREATE TABLE customers (
 -   **POST `/api/pipeline/delta-load`**: Execute a delta load for new data.
 -   **POST `/api/pipeline/update-prices`**: Update product prices and recalculate amounts.
 -   **GET `/api/exchange-rate`**: Get the current USD to EGP exchange rate.
-
-## 🤝 Contributing
-
-Contributions are welcome! If you have suggestions for improvements, please follow these steps:
-
-1.  **Fork the repository**.
-2.  **Create a new branch**: `git checkout -b feature/YourFeatureName`
-3.  **Make your changes** and commit them: `git commit -m 'Add some feature'`
-4.  **Push to the branch**: `git push origin feature/YourFeatureName`
-5.  **Open a Pull Request**.
-
-Please make sure to update tests as appropriate.
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details (if applicable).
 
 ## 📧 Contact
 
