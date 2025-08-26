@@ -157,7 +157,7 @@ Market_Flow/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/elewashy/Market_Flow
+git clone https://github.com/elewashy/DEPI
 cd Market_Flow
 ```
 
