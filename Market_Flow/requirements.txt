@@ -1,0 +1,9 @@
+requests
+python-dotenv
+pandas
+faker
+flask
+flask-cors
+plotly
+openpyxl
+xlsxwriter

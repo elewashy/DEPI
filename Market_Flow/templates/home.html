@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Market Flow{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="h2 mb-1">Dashboard Overview</h1>
+            <p class="text-muted">Real-time insights into your business performance</p>
+        </div>
+        <div>
+            <span class="badge bg-success">✨ Live Data</span>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row mb-4">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card stat-card-primary">
+            <div class="card-body text-center">
+                <div class="stat-number">{{ "{:,}".format(stats.total_orders or 0) }}</div>
+                <div class="stat-label"><i class="fas fa-shopping-cart me-1"></i>Total Orders</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card stat-card-success">
+            <div class="card-body text-center">
+                <div class="stat-number">{{ "{:,.2f}".format(stats.total_revenue or 0) }} EGP</div>
+                <div class="stat-label"><i class="fas fa-coins me-1"></i>Total Revenue</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card stat-card-info">
+            <div class="card-body text-center">
+                <div class="stat-number">{{ "{:,}".format(stats.unique_customers or 0) }}</div>
+                <div class="stat-label"><i class="fas fa-users me-1"></i>Unique Customers</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card stat-card-warning">
+            <div class="card-body text-center">
+                <div class="stat-number">{{ "{:,}".format(stats.unique_products or 0) }}</div>
+                <div class="stat-label"><i class="fas fa-box me-1"></i>Unique Products</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Information Cards -->
+<div class="row mb-4">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header card-header-warning">
+                <h5 class="mb-0"><i class="fas fa-trophy me-2"></i>Top Performing Branch</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4 class="mb-1 text-dark">{{ stats.top_branch.branch if stats.top_branch else 'N/A' }}</h4>
+                        <p class="text-muted mb-0">Leading in sales performance</p>
+                    </div>
+                    <div class="text-end">
+                        <div class="h5 mb-0 text-success">{{ "{:,.2f}".format(stats.top_branch.total_sales if stats.top_branch else 0) }} EGP</div>
+                        <small class="text-muted">Total Sales</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header card-header-info">
+                <h5 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4 class="mb-1 text-dark">{{ "{:,}".format(stats.recent_orders or 0) }}</h4>
+                        <p class="text-muted mb-0">Orders in last 7 days</p>
+                    </div>
+                    <div class="text-end">
+                        <i class="fas fa-chart-line fa-2x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('orders_dashboard') }}" class="btn btn-outline-primary btn-custom w-100">
+                            <i class="fas fa-table me-2"></i>View Orders
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('visualizations') }}" class="btn btn-outline-info btn-custom w-100">
+                            <i class="fas fa-chart-bar me-2"></i>Analytics
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('control_panel') }}" class="btn btn-outline-warning btn-custom w-100">
+                            <i class="fas fa-cogs me-2"></i>Control Panel
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/api/orders/export?format=csv" class="btn btn-outline-success btn-custom w-100">
+                            <i class="fas fa-download me-2"></i>Export Data
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- System Status -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header card-header-success">
+                <h5 class="mb-0"><i class="fas fa-server me-2"></i>System Status</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-3">
+                                <span class="badge bg-success rounded-pill">●</span>
+                            </div>
+                            <div>
+                                <strong>Database</strong><br>
+                                <small class="text-muted">Connected and operational</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-3">
+                                <span class="badge bg-success rounded-pill">●</span>
+                            </div>
+                            <div>
+                                <strong>API Services</strong><br>
+                                <small class="text-muted">All endpoints responsive</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-3">
+                                <span class="badge bg-warning rounded-pill">●</span>
+                            </div>
+                            <div>
+                                <strong>Data Pipeline</strong><br>
+                                <small class="text-muted">Ready for execution</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Auto-refresh page data every 5 minutes
+    setTimeout(function() {
+        location.reload();
+    }, 300000);
+    
+    // Add some animation to the stat cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const statCards = document.querySelectorAll('.stat-card');
+        statCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 100);
+        });
+    });
+</script>
+{% endblock %}

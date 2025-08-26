@@ -1,0 +1,502 @@
+[
+    {
+        "id": 1,
+        "name": "Premium Coffee",
+        "price": 27.15
+    },
+    {
+        "id": 2,
+        "name": "Premium Tablet",
+        "price": 2516.82
+    },
+    {
+        "id": 3,
+        "name": "Premium Keyboard",
+        "price": 1725.38
+    },
+    {
+        "id": 4,
+        "name": "Premium Scarf",
+        "price": 99.32
+    },
+    {
+        "id": 5,
+        "name": "BrandC Hat",
+        "price": 263.69
+    },
+    {
+        "id": 6,
+        "name": "BrandA Laptop",
+        "price": 1248.36
+    },
+    {
+        "id": 7,
+        "name": "Premium Soap",
+        "price": 102.81
+    },
+    {
+        "id": 8,
+        "name": "BrandA T-Shirt",
+        "price": 115.64
+    },
+    {
+        "id": 9,
+        "name": "BrandC Milk",
+        "price": 144.0
+    },
+    {
+        "id": 10,
+        "name": "BrandA Science Journal",
+        "price": 108.81
+    },
+    {
+        "id": 11,
+        "name": "Eco Tomatoes",
+        "price": 134.36
+    },
+    {
+        "id": 12,
+        "name": "Value Batteries",
+        "price": 179.19
+    },
+    {
+        "id": 13,
+        "name": "Premium Jeans",
+        "price": 647.7
+    },
+    {
+        "id": 14,
+        "name": "Premium Biography",
+        "price": 227.17
+    },
+    {
+        "id": 15,
+        "name": "Super Olive Oil",
+        "price": 103.12
+    },
+    {
+        "id": 16,
+        "name": "Premium Milk",
+        "price": 80.19
+    },
+    {
+        "id": 17,
+        "name": "BrandB Smartwatch",
+        "price": 2218.51
+    },
+    {
+        "id": 18,
+        "name": "BrandA Poetry Collection",
+        "price": 265.27
+    },
+    {
+        "id": 19,
+        "name": "Eco Sweater",
+        "price": 257.01
+    },
+    {
+        "id": 20,
+        "name": "BrandB Towel",
+        "price": 146.46
+    },
+    {
+        "id": 21,
+        "name": "Eco History Book",
+        "price": 105.07
+    },
+    {
+        "id": 22,
+        "name": "BrandB Cookbook",
+        "price": 238.08
+    },
+    {
+        "id": 23,
+        "name": "BrandB Poetry Collection",
+        "price": 140.47
+    },
+    {
+        "id": 24,
+        "name": "Super Camera",
+        "price": 3734.07
+    },
+    {
+        "id": 25,
+        "name": "Value History Book",
+        "price": 89.98
+    },
+    {
+        "id": 26,
+        "name": "Eco Tea",
+        "price": 29.39
+    },
+    {
+        "id": 27,
+        "name": "Value Tablet",
+        "price": 4833.25
+    },
+    {
+        "id": 28,
+        "name": "BrandB Tomatoes",
+        "price": 14.97
+    },
+    {
+        "id": 29,
+        "name": "BrandC Camera",
+        "price": 1951.3
+    },
+    {
+        "id": 30,
+        "name": "BrandA Olive Oil",
+        "price": 99.45
+    },
+    {
+        "id": 31,
+        "name": "BrandA Jacket",
+        "price": 691.83
+    },
+    {
+        "id": 32,
+        "name": "Eco Potatoes",
+        "price": 126.52
+    },
+    {
+        "id": 33,
+        "name": "Super Plate",
+        "price": 47.55
+    },
+    {
+        "id": 34,
+        "name": "BrandA Dress",
+        "price": 643.83
+    },
+    {
+        "id": 35,
+        "name": "Eco Trash Bags",
+        "price": 242.56
+    },
+    {
+        "id": 36,
+        "name": "BrandC Poetry Collection",
+        "price": 117.48
+    },
+    {
+        "id": 37,
+        "name": "BrandB Shoes",
+        "price": 63.61
+    },
+    {
+        "id": 38,
+        "name": "Value Towel",
+        "price": 220.83
+    },
+    {
+        "id": 39,
+        "name": "BrandC History Book",
+        "price": 193.53
+    },
+    {
+        "id": 40,
+        "name": "Premium Science Journal",
+        "price": 97.88
+    },
+    {
+        "id": 41,
+        "name": "BrandB Headphones",
+        "price": 2773.61
+    },
+    {
+        "id": 42,
+        "name": "BrandC Rice",
+        "price": 38.8
+    },
+    {
+        "id": 43,
+        "name": "Premium Towel",
+        "price": 207.62
+    },
+    {
+        "id": 44,
+        "name": "Super Science Journal",
+        "price": 153.75
+    },
+    {
+        "id": 45,
+        "name": "BrandB Jacket",
+        "price": 399.28
+    },
+    {
+        "id": 46,
+        "name": "Eco Poetry Collection",
+        "price": 173.51
+    },
+    {
+        "id": 47,
+        "name": "Premium Sweater",
+        "price": 422.61
+    },
+    {
+        "id": 48,
+        "name": "Eco Bananas",
+        "price": 136.41
+    },
+    {
+        "id": 49,
+        "name": "BrandB Camera",
+        "price": 893.04
+    },
+    {
+        "id": 50,
+        "name": "Eco Camera",
+        "price": 2865.42
+    },
+    {
+        "id": 51,
+        "name": "BrandB Keyboard",
+        "price": 4529.96
+    },
+    {
+        "id": 52,
+        "name": "Value Charger",
+        "price": 2945.14
+    },
+    {
+        "id": 53,
+        "name": "BrandC Sweater",
+        "price": 612.85
+    },
+    {
+        "id": 54,
+        "name": "Value Mouse",
+        "price": 3855.87
+    },
+    {
+        "id": 55,
+        "name": "BrandC Dress",
+        "price": 286.7
+    },
+    {
+        "id": 56,
+        "name": "Super Shampoo",
+        "price": 24.69
+    },
+    {
+        "id": 57,
+        "name": "BrandA Tablet",
+        "price": 1266.64
+    },
+    {
+        "id": 58,
+        "name": "BrandC Apples",
+        "price": 23.06
+    },
+    {
+        "id": 59,
+        "name": "Eco Laptop",
+        "price": 3115.58
+    },
+    {
+        "id": 60,
+        "name": "BrandA Headphones",
+        "price": 4232.86
+    },
+    {
+        "id": 61,
+        "name": "Value Hat",
+        "price": 173.96
+    },
+    {
+        "id": 62,
+        "name": "Premium Hat",
+        "price": 580.41
+    },
+    {
+        "id": 63,
+        "name": "Eco Mug",
+        "price": 30.8
+    },
+    {
+        "id": 64,
+        "name": "BrandB Scarf",
+        "price": 420.81
+    },
+    {
+        "id": 65,
+        "name": "BrandC Detergent",
+        "price": 133.37
+    },
+    {
+        "id": 66,
+        "name": "Premium Pasta",
+        "price": 87.16
+    },
+    {
+        "id": 67,
+        "name": "Eco Socks",
+        "price": 455.25
+    },
+    {
+        "id": 68,
+        "name": "Super Power Bank",
+        "price": 3837.33
+    },
+    {
+        "id": 69,
+        "name": "BrandA History Book",
+        "price": 77.21
+    },
+    {
+        "id": 70,
+        "name": "BrandB Monitor",
+        "price": 4534.1
+    },
+    {
+        "id": 71,
+        "name": "BrandB Milk",
+        "price": 70.31
+    },
+    {
+        "id": 72,
+        "name": "Premium Detergent",
+        "price": 145.11
+    },
+    {
+        "id": 73,
+        "name": "BrandB Batteries",
+        "price": 198.64
+    },
+    {
+        "id": 74,
+        "name": "BrandA Coffee",
+        "price": 71.02
+    },
+    {
+        "id": 75,
+        "name": "BrandC Cheese",
+        "price": 42.7
+    },
+    {
+        "id": 76,
+        "name": "Value Trash Bags",
+        "price": 69.36
+    },
+    {
+        "id": 77,
+        "name": "Value Mug",
+        "price": 187.05
+    },
+    {
+        "id": 78,
+        "name": "Eco Cookbook",
+        "price": 60.56
+    },
+    {
+        "id": 79,
+        "name": "Eco Light Bulb",
+        "price": 15.47
+    },
+    {
+        "id": 80,
+        "name": "BrandC Soap",
+        "price": 33.26
+    },
+    {
+        "id": 81,
+        "name": "Value Pan",
+        "price": 223.4
+    },
+    {
+        "id": 82,
+        "name": "BrandB Plate",
+        "price": 53.53
+    },
+    {
+        "id": 83,
+        "name": "BrandC Tea",
+        "price": 99.55
+    },
+    {
+        "id": 84,
+        "name": "Eco Keyboard",
+        "price": 528.74
+    },
+    {
+        "id": 85,
+        "name": "Premium Power Bank",
+        "price": 2664.0
+    },
+    {
+        "id": 86,
+        "name": "Value Pasta",
+        "price": 207.22
+    },
+    {
+        "id": 87,
+        "name": "Premium Shampoo",
+        "price": 49.32
+    },
+    {
+        "id": 88,
+        "name": "BrandC Towel",
+        "price": 46.24
+    },
+    {
+        "id": 89,
+        "name": "Value Keyboard",
+        "price": 728.08
+    },
+    {
+        "id": 90,
+        "name": "BrandB Detergent",
+        "price": 21.98
+    },
+    {
+        "id": 91,
+        "name": "Eco Jeans",
+        "price": 275.37
+    },
+    {
+        "id": 92,
+        "name": "Value Coffee",
+        "price": 60.35
+    },
+    {
+        "id": 93,
+        "name": "Super Potatoes",
+        "price": 35.52
+    },
+    {
+        "id": 94,
+        "name": "Value Cookbook",
+        "price": 125.78
+    },
+    {
+        "id": 95,
+        "name": "BrandC Cookbook",
+        "price": 202.16
+    },
+    {
+        "id": 96,
+        "name": "BrandB Fiction Novel",
+        "price": 68.52
+    },
+    {
+        "id": 97,
+        "name": "BrandC Power Bank",
+        "price": 857.43
+    },
+    {
+        "id": 98,
+        "name": "BrandC Science Journal",
+        "price": 142.47
+    },
+    {
+        "id": 99,
+        "name": "Eco Power Bank",
+        "price": 4078.21
+    },
+    {
+        "id": 100,
+        "name": "BrandA Mug",
+        "price": 115.6
+    }
+]

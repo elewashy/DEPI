@@ -1,0 +1,339 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics - Market Flow{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="h2 mb-1">Analytics Dashboard</h1>
+            <p class="text-muted">Visual insights into your business performance</p>
+        </div>
+        <div>
+            <button class="btn btn-outline-primary btn-custom" onclick="refreshCharts()">
+                <i class="fas fa-sync-alt me-1"></i>Refresh Data
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row 1 -->
+<div class="row mb-4">
+    <div class="col-lg-8">
+        <div class="chart-container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0"><i class="fas fa-line-chart me-2"></i>Sales Over Time (Last 30 Days)</h5>
+                <div class="btn-group btn-group-sm" role="group">
+                    <input type="radio" class="btn-check" name="timeRange" id="days7" value="7">
+                    <label class="btn btn-outline-primary" for="days7">7d</label>
+                    
+                    <input type="radio" class="btn-check" name="timeRange" id="days30" value="30" checked>
+                    <label class="btn btn-outline-primary" for="days30">30d</label>
+                    
+                    <input type="radio" class="btn-check" name="timeRange" id="days90" value="90">
+                    <label class="btn btn-outline-primary" for="days90">90d</label>
+                </div>
+            </div>
+            <div id="salesOverTimeChart" style="height: 400px;"></div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="chart-container">
+            <h5 class="mb-3"><i class="fas fa-chart-pie me-2"></i>Sales by Branch</h5>
+            <div id="salesByBranchChart" style="height: 400px;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row 2 -->
+<div class="row mb-4">
+    <div class="col-lg-6">
+        <div class="chart-container">
+            <h5 class="mb-3"><i class="fas fa-trophy me-2"></i>Top Selling Products</h5>
+            <div id="topProductsChart" style="height: 400px;"></div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="chart-container">
+            <h5 class="mb-3"><i class="fas fa-users me-2"></i>Top Customers by Transactions</h5>
+            <div id="topCustomersChart" style="height: 400px;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Summary Cards -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Quick Stats</h5>
+            </div>
+            <div class="card-body">
+                <div class="row" id="quickStats">
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center">
+                            <div class="h4 text-primary" id="avgOrderValue">-</div>
+                            <small class="text-muted">Average Order Value</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center">
+                            <div class="h4 text-success" id="totalProducts">-</div>
+                            <small class="text-muted">Products Sold</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center">
+                            <div class="h4 text-info" id="activeBranches">-</div>
+                            <small class="text-muted">Active Branches</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center">
+                            <div class="h4 text-warning" id="avgDailySales">-</div>
+                            <small class="text-muted">Avg Daily Sales</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="position-fixed top-0 start-0 w-100 h-100 d-none" style="background: rgba(0,0,0,0.5); z-index: 9999;">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-center text-white">
+            <div class="spinner-border mb-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div>Loading analytics data...</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+let charts = {};
+
+// Initialize charts when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadAllCharts();
+    
+    // Add event listeners for time range buttons
+    document.querySelectorAll('input[name="timeRange"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            loadSalesOverTimeChart(this.value);
+        });
+    });
+});
+
+async function loadAllCharts() {
+    showLoading();
+    
+    try {
+        await Promise.all([
+            loadSalesOverTimeChart(30),
+            loadTopProductsChart(),
+            loadSalesByBranchChart(),
+            loadTopCustomersChart(),
+            loadQuickStats()
+        ]);
+    } catch (error) {
+        console.error('Error loading charts:', error);
+        showError('Failed to load analytics data');
+    } finally {
+        hideLoading();
+    }
+}
+
+async function loadSalesOverTimeChart(days = 30) {
+    try {
+        const response = await fetch(`/api/analytics/sales-over-time?days=${days}`);
+        const data = await response.json();
+        
+        const trace1 = {
+            x: data.dates,
+            y: data.sales,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Sales (EGP)',
+            line: { color: '#3498db', width: 3 },
+            marker: { size: 6 }
+        };
+        
+        const trace2 = {
+            x: data.dates,
+            y: data.orders,
+            type: 'bar',
+            name: 'Orders',
+            yaxis: 'y2',
+            opacity: 0.7,
+            marker: { color: '#2ecc71' }
+        };
+        
+        const layout = {
+            xaxis: { title: 'Date' },
+            yaxis: { title: 'Sales (EGP)', side: 'left' },
+            yaxis2: {
+                title: 'Number of Orders',
+                side: 'right',
+                overlaying: 'y'
+            },
+            legend: { x: 0, y: 1 },
+            margin: { l: 50, r: 50, t: 50, b: 50 }
+        };
+        
+        Plotly.newPlot('salesOverTimeChart', [trace1, trace2], layout, {responsive: true});
+        
+    } catch (error) {
+        console.error('Error loading sales over time chart:', error);
+    }
+}
+
+async function loadTopProductsChart() {
+    try {
+        const response = await fetch('/api/analytics/top-products?limit=10');
+        const data = await response.json();
+        
+        const trace = {
+            x: data.map(item => item.total_sales),
+            y: data.map(item => item.product_name),
+            type: 'bar',
+            orientation: 'h',
+            marker: { color: '#e74c3c' }
+        };
+        
+        const layout = {
+            xaxis: { title: 'Total Sales (EGP)' },
+            yaxis: { title: 'Products' },
+            margin: { l: 150, r: 50, t: 50, b: 50 }
+        };
+        
+        Plotly.newPlot('topProductsChart', [trace], layout, {responsive: true});
+        
+    } catch (error) {
+        console.error('Error loading top products chart:', error);
+    }
+}
+
+async function loadSalesByBranchChart() {
+    try {
+        const response = await fetch('/api/analytics/sales-by-branch');
+        const data = await response.json();
+        
+        const trace = {
+            labels: data.map(item => item.branch),
+            values: data.map(item => item.total_sales),
+            type: 'pie',
+            textinfo: 'label+percent',
+            textposition: 'outside',
+            marker: {
+                colors: ['#3498db', '#e74c3c', '#f39c12', '#2ecc71', '#9b59b6', '#1abc9c']
+            }
+        };
+        
+        const layout = {
+            margin: { l: 20, r: 20, t: 20, b: 20 }
+        };
+        
+        Plotly.newPlot('salesByBranchChart', [trace], layout, {responsive: true});
+        
+    } catch (error) {
+        console.error('Error loading sales by branch chart:', error);
+    }
+}
+
+async function loadTopCustomersChart() {
+    try {
+        const response = await fetch('/api/analytics/top-customers?limit=10');
+        const data = await response.json();
+        
+        const trace = {
+            x: data.map(item => item.customer_name),
+            y: data.map(item => item.transaction_count),
+            type: 'bar',
+            marker: { color: '#9b59b6' }
+        };
+        
+        const layout = {
+            xaxis: { 
+                title: 'Customers',
+                tickangle: -45
+            },
+            yaxis: { title: 'Number of Transactions' },
+            margin: { l: 50, r: 50, t: 50, b: 150 }
+        };
+        
+        Plotly.newPlot('topCustomersChart', [trace], layout, {responsive: true});
+        
+    } catch (error) {
+        console.error('Error loading top customers chart:', error);
+    }
+}
+
+async function loadQuickStats() {
+    try {
+        // You can create a dedicated endpoint for these stats or calculate from existing data
+        const [salesResponse, productsResponse, branchResponse] = await Promise.all([
+            fetch('/api/analytics/sales-over-time?days=30'),
+            fetch('/api/analytics/top-products?limit=1000'),
+            fetch('/api/analytics/sales-by-branch')
+        ]);
+        
+        const salesData = await salesResponse.json();
+        const productsData = await productsResponse.json();
+        const branchData = await branchResponse.json();
+        
+        // Calculate average order value
+        const totalSales = salesData.sales.reduce((a, b) => a + b, 0);
+        const totalOrders = salesData.orders.reduce((a, b) => a + b, 0);
+        const avgOrderValue = totalOrders > 0 ? totalSales / totalOrders : 0;
+        
+        // Calculate average daily sales
+        const avgDailySales = salesData.sales.length > 0 ? totalSales / salesData.sales.length : 0;
+        
+        document.getElementById('avgOrderValue').textContent = avgOrderValue.toFixed(2) + ' EGP';
+        document.getElementById('totalProducts').textContent = productsData.length.toLocaleString();
+        document.getElementById('activeBranches').textContent = branchData.length.toLocaleString();
+        document.getElementById('avgDailySales').textContent = avgDailySales.toFixed(2) + ' EGP';
+        
+    } catch (error) {
+        console.error('Error loading quick stats:', error);
+    }
+}
+
+function refreshCharts() {
+    loadAllCharts();
+}
+
+function showLoading() {
+    document.getElementById('loadingOverlay').classList.remove('d-none');
+}
+
+function hideLoading() {
+    document.getElementById('loadingOverlay').classList.add('d-none');
+}
+
+function showError(message) {
+    // Create a simple error alert
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'alert alert-danger alert-dismissible fade show';
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    
+    const container = document.querySelector('.content-wrapper .pt-3');
+    container.insertBefore(alertDiv, container.firstChild);
+}
+
+// Make charts responsive on window resize
+window.addEventListener('resize', function() {
+    Object.keys(charts).forEach(chartId => {
+        Plotly.Plots.resize(chartId);
+    });
+});
+</script>
+{% endblock %}

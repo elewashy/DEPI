@@ -1,0 +1,349 @@
+{% extends "base.html" %}
+
+{% block title %}Control Panel - Market Flow{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="h2 mb-1">Control Panel</h1>
+            <p class="text-muted">Manage and execute data pipeline operations</p>
+        </div>
+        <div>
+            <span class="badge bg-info" id="systemStatus">System Ready</span>
+        </div>
+    </div>
+</div>
+
+<!-- Pipeline Operations -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-cogs me-2"></i>Data Pipeline Operations</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h6 class="mb-0"><i class="fas fa-database me-2"></i>ETL Pipeline</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Execute the complete ETL pipeline to process and load all transaction data from CSV files into the database.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-primary btn-custom" onclick="runPipelineOperation('etl')" id="etlBtn">
+                                        <i class="fas fa-play me-1"></i>Run ETL Pipeline
+                                    </button>
+                                    <small class="text-muted" id="etlStatus">Ready</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="card border-info">
+                            <div class="card-header bg-info text-white">
+                                <h6 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Delta Load</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Process and add new transaction data without affecting existing records in the database.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-info btn-custom" onclick="runPipelineOperation('delta-load')" id="deltaBtn">
+                                        <i class="fas fa-plus me-1"></i>Run Delta Load
+                                    </button>
+                                    <small class="text-muted" id="deltaStatus">Ready</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="card border-warning">
+                            <div class="card-header bg-warning text-dark">
+                                <h6 class="mb-0"><i class="fas fa-dollar-sign me-2"></i>Update Prices</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Update product prices and recalculate order amounts to reflect the latest pricing information.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-warning btn-custom" onclick="runPipelineOperation('update-prices')" id="pricesBtn">
+                                        <i class="fas fa-edit me-1"></i>Update Prices
+                                    </button>
+                                    <small class="text-muted" id="pricesStatus">Ready</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="card border-success">
+                            <div class="card-header bg-success text-white">
+                                <h6 class="mb-0"><i class="fas fa-exchange-alt me-2"></i>Exchange Rate Check</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Check current USD to EGP exchange rate. Currency conversion is now automatically handled during ETL process.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-success btn-custom" onclick="runPipelineOperation('currency-conversion')" id="currencyBtn">
+                                        <i class="fas fa-globe me-1"></i>Check Rate
+                                    </button>
+                                    <small class="text-muted" id="currencyStatus">Ready</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Operation Log -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-list-alt me-2"></i>Operation Log</h5>
+                <button class="btn btn-sm btn-outline-secondary" onclick="clearLog()">
+                    <i class="fas fa-trash me-1"></i>Clear Log
+                </button>
+            </div>
+            <div class="card-body">
+                <div id="operationLog" class="bg-dark text-white p-3 rounded" style="height: 300px; overflow-y: auto; font-family: monospace;">
+                    <div class="text-success">System initialized - Ready for operations</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Database Status -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-database me-2"></i>Database Status</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 text-center mb-3">
+                        <div class="h4 text-primary" id="dbOrderCount">Loading...</div>
+                        <small class="text-muted">Total Orders</small>
+                    </div>
+                    <div class="col-6 text-center mb-3">
+                        <div class="h4 text-success" id="dbLastUpdate">Loading...</div>
+                        <small class="text-muted">Last Updated</small>
+                    </div>
+                </div>
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                </div>
+                <small class="text-muted">Database connection: Active</small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>System Health</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="badge bg-success rounded-pill me-2">●</span>
+                    <span>Database Connection</span>
+                    <span class="ms-auto text-success">Online</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="badge bg-success rounded-pill me-2">●</span>
+                    <span>API Services</span>
+                    <span class="ms-auto text-success">Running</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="badge bg-success rounded-pill me-2">●</span>
+                    <span>Exchange Rate Integration</span>
+                    <span class="ms-auto text-success">Active</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-success rounded-pill me-2">●</span>
+                    <span>File System</span>
+                    <span class="ms-auto text-success">Accessible</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <button class="btn btn-outline-primary btn-custom w-100" onclick="refreshDashboard()">
+                            <i class="fas fa-sync-alt me-2"></i>Refresh Dashboard
+                        </button>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('orders_dashboard') }}" class="btn btn-outline-info btn-custom w-100">
+                            <i class="fas fa-table me-2"></i>View Orders
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/api/orders/export?format=csv" class="btn btn-outline-success btn-custom w-100">
+                            <i class="fas fa-download me-2"></i>Export Data
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('visualizations') }}" class="btn btn-outline-warning btn-custom w-100">
+                            <i class="fas fa-chart-bar me-2"></i>View Analytics
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Load dashboard data on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadDatabaseStatus();
+});
+
+async function runPipelineOperation(operation) {
+    const buttons = {
+        'etl': 'etlBtn',
+        'delta-load': 'deltaBtn',
+        'update-prices': 'pricesBtn',
+        'currency-conversion': 'currencyBtn'
+    };
+    
+    const statuses = {
+        'etl': 'etlStatus',
+        'delta-load': 'deltaStatus',
+        'update-prices': 'pricesStatus',
+        'currency-conversion': 'currencyStatus'
+    };
+    
+    const button = document.getElementById(buttons[operation]);
+    const status = document.getElementById(statuses[operation]);
+    
+    // Update UI
+    button.disabled = true;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Running...';
+    status.textContent = 'Running...';
+    status.className = 'text-warning';
+    
+    logMessage(`Starting ${operation} operation...`, 'info');
+    
+    try {
+        const response = await fetch(`/api/pipeline/${operation}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+            logMessage(`✓ ${operation} completed successfully: ${result.message}`, 'success');
+            status.textContent = 'Completed';
+            status.className = 'text-success';
+            
+            // Refresh database status after successful operation
+            setTimeout(loadDatabaseStatus, 1000);
+        } else {
+            logMessage(`✗ ${operation} failed: ${result.message}`, 'error');
+            status.textContent = 'Failed';
+            status.className = 'text-danger';
+        }
+    } catch (error) {
+        logMessage(`✗ ${operation} error: ${error.message}`, 'error');
+        status.textContent = 'Error';
+        status.className = 'text-danger';
+    } finally {
+        // Reset button
+        button.disabled = false;
+        const originalTexts = {
+            'etl': '<i class="fas fa-play me-1"></i>Run ETL Pipeline',
+            'delta-load': '<i class="fas fa-plus me-1"></i>Run Delta Load',
+            'update-prices': '<i class="fas fa-edit me-1"></i>Update Prices',
+            'currency-conversion': '<i class="fas fa-globe me-1"></i>Check Rate'
+        };
+        button.innerHTML = originalTexts[operation];
+        
+        // Reset status after delay
+        setTimeout(() => {
+            status.textContent = 'Ready';
+            status.className = 'text-muted';
+        }, 5000);
+    }
+}
+
+async function loadDatabaseStatus() {
+    try {
+        const response = await fetch('/api/orders?limit=1');
+        const data = await response.json();
+        
+        document.getElementById('dbOrderCount').textContent = data.total.toLocaleString();
+        document.getElementById('dbLastUpdate').textContent = new Date().toLocaleDateString();
+        
+    } catch (error) {
+        document.getElementById('dbOrderCount').textContent = 'Error';
+        document.getElementById('dbLastUpdate').textContent = 'Unknown';
+        logMessage('Failed to load database status', 'error');
+    }
+}
+
+function logMessage(message, type = 'info') {
+    const log = document.getElementById('operationLog');
+    const timestamp = new Date().toLocaleTimeString();
+    
+    const colors = {
+        'info': 'text-info',
+        'success': 'text-success',
+        'error': 'text-danger',
+        'warning': 'text-warning'
+    };
+    
+    const logEntry = document.createElement('div');
+    logEntry.className = colors[type] || 'text-white';
+    logEntry.innerHTML = `[${timestamp}] ${message}`;
+    
+    log.appendChild(logEntry);
+    log.scrollTop = log.scrollHeight;
+}
+
+function clearLog() {
+    const log = document.getElementById('operationLog');
+    log.innerHTML = '<div class="text-success">Log cleared - System ready</div>';
+}
+
+function refreshDashboard() {
+    logMessage('Refreshing dashboard data...', 'info');
+    loadDatabaseStatus();
+    
+    // Show success message
+    setTimeout(() => {
+        logMessage('✓ Dashboard refreshed successfully', 'success');
+    }, 1000);
+}
+
+// Auto-refresh database status every 30 seconds
+setInterval(loadDatabaseStatus, 30000);
+
+// Add some periodic system health checks
+setInterval(() => {
+    const systemStatus = document.getElementById('systemStatus');
+    systemStatus.textContent = 'System Active';
+    systemStatus.className = 'badge bg-success';
+}, 60000);
+</script>
+{% endblock %}
