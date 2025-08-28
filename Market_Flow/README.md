@@ -222,21 +222,9 @@ The project includes several scripts to manage and generate data for testing and
 
 ## 🔄 Data Flow
 
-```
-Raw Data Sources
-       ↓
-[CSV Files] → [Products JSON] → [Customer DB]
-       ↓
-   ETL Pipeline (etl_pipeline.py)
-       ↓
-Data Transformation (Currency Conversion, Validation, Cleaning)
-       ↓
-   Orders Database (orders.db)
-       ↓
-  Web Dashboard & API (app.py)
-       ↓
-User Interaction (Analytics, Exporting Data)
-```
+<div align="center">
+  <img src="assets/img/Data Flow.png" alt="Data Flow Diagram" width="800">
+</div>
 
 ## 🗄 Database Schema
 
