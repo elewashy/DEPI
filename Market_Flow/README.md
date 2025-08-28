@@ -296,5 +296,5 @@ CREATE TABLE customers (
 **Built with ❤️ by Mohamed Tamer**
 
 *For questions or collaboration opportunities, feel free to connect!*
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/elewashy/)
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/elewashy/)
 - GitHub: [elewashy](https://github.com/elewashy)
