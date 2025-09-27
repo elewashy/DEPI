@@ -1,0 +1,8 @@
+event_type_id,event_type_name,description
+ET01,Fire,Reports of fire incidents in buildings or public spaces.
+ET02,Accident,"Traffic accidents involving vehicles, pedestrians, or property damage."
+ET03,Medical Emergency,"Urgent medical situations requiring immediate attention, like heart attacks or injuries."
+ET04,Crime Report,"Reports of criminal activities such as theft, assault, or vandalism."
+ET05,Power Outage,Disruption of electrical power in a specific area.
+ET06,Water Leakage,Reports of major water pipe bursts or significant leakages.
+ET07,Gas Leak,"Detection of natural gas leaks, posing an explosion risk."

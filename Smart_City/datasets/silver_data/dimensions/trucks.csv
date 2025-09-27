@@ -1,0 +1,17 @@
+truck_id,truck_type,capacity_tons,fuel_type,status
+T000,No Truck,0,N/A,N/A
+T001,Organic,10,CNG,Active
+T002,Recycling,7,Diesel,Active
+T003,Compactor,10,Diesel,Active
+T004,Compactor,5,Diesel,Active
+T005,Compactor,5,CNG,Active
+T006,Recycling,10,CNG,Active
+T007,Organic,10,CNG,Active
+T008,Organic,7,Electric,Active
+T009,Compactor,5,Diesel,Active
+T010,Organic,7,Electric,Active
+T011,Organic,5,CNG,Under Maintenance
+T012,Organic,10,CNG,Active
+T013,Compactor,5,CNG,Active
+T014,Compactor,5,Electric,Active
+T015,Recycling,7,Electric,Active

@@ -1,0 +1,3 @@
+CREATE LOGIN talend_user WITH PASSWORD = '221010#m';
+CREATE USER talend_user FOR LOGIN talend_user;
+ALTER ROLE db_owner ADD MEMBER talend_user; -- or grant required permissions

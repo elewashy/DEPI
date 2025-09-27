@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_cCbPAJpTEfCpiq8TpKHonA" name="SmartCity_1" id="_T6FO4JpTEfCpiq8TpKHonA" label="SmartCity_1" dataPackage="_cEBKcJpTEfCpiq8TpKHonA" DatabaseType="Microsoft SQL Server" DriverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" URL="jdbc:sqlserver://ELEWASHY:1433;DatabaseName=SmartCity;encrypt=true;trustServerCertificate=true;" dbVersionString="MSSQL_PROP" Port="1433" Username="talend_user" Password="enc:system.encryption.key.v1:yk+fJh49qV/t1bvxdiv+Wsi75JVyhd8ve9FD5lKLXBj8Qt9O" ServerName="ELEWASHY" DatasourceName="" FileFieldName="" SID="SmartCity" SqlSynthax="" StringQuote="" NullChar="" DbmsId="id_MSSQL" ProductId="SQL_SERVER" AdditionalParams="encrypt=true;trustServerCertificate=true;" StandardSQL="true" SQLMode="false" UiSchema="">
+    <taggedValue xmi:id="_cCbPAZpTEfCpiq8TpKHonA" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_cCxNQJpTEfCpiq8TpKHonA" tag="package filter" value=""/>
+    <taggedValue xmi:id="_cC4iAJpTEfCpiq8TpKHonA" tag="Status" value=""/>
+    <taggedValue xmi:id="_cC4iAZpTEfCpiq8TpKHonA" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_cC4iAppTEfCpiq8TpKHonA" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_cC4iA5pTEfCpiq8TpKHonA" tag="Description" value=""/>
+    <taggedValue xmi:id="_cC4iBJpTEfCpiq8TpKHonA" tag="Author" value=""/>
+    <taggedValue xmi:id="_cC4iBZpTEfCpiq8TpKHonA" tag="otherParameter"/>
+    <taggedValue xmi:id="_cDEIMJpTEfCpiq8TpKHonA" tag="DB ProductName" value="Microsoft SQL Server"/>
+    <taggedValue xmi:id="_cDEIMZpTEfCpiq8TpKHonA" tag="DB ProductVersion" value="16.00.1150"/>
+    <taggedValue xmi:id="_cDEIMppTEfCpiq8TpKHonA" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_cCbPAppTEfCpiq8TpKHonA" key="CONN_PARA_KEY_USERNAME" value="talend_user"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_cEBKcJpTEfCpiq8TpKHonA" name="SmartCity" dataManager="_cCbPAJpTEfCpiq8TpKHonA"/>
+</xmi:XMI>

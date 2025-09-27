@@ -1,0 +1,11 @@
+route_id,route_name,start_point,end_point,distance_km,active_status
+R01,Route 1 - Ring Road to AUC,Ring Road Station,AUC Gate 4,11.5,Active
+R02,Route 2 - CFC Mall to M. Naguib Axis,Cairo Festival City Mall,Mohamed Naguib Axis,8.2,Active
+R03,Route 3 - Downtown Mall to 90th St.,Downtown Mall,90th Street Metro Market,4.5,Active
+R04,Route 4 - North Investors to Air Force Hospital,El Mostashmereen El Shamaleya,Air Force Hospital,9.8,Active
+R05,Route 5 - AUC to CFC Mall,AUC Gate 4,Cairo Festival City Mall,5.1,Active
+R06,Route 6 - Ring Road to Downtown Mall,Ring Road Station,Downtown Mall,7.3,Active
+R07,Route 7 - Police Station to Air Force Hospital,Tagamoa Police Station,Air Force Hospital,6.5,Active
+R08,Route 8 - M. Naguib Axis to Ring Road,Mohamed Naguib Axis,Ring Road Station,10.2,Active
+R09,Route 9 - 90th St. to North Investors,90th Street Metro Market,El Mostashmereen El Shamaleya,5.8,Inactive
+R10,Route 10 - AUC to Police Station,AUC Gate 4,Tagamoa Police Station,3.4,Inactive

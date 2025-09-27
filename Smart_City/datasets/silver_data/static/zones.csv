@@ -1,0 +1,7 @@
+zone_id,zone_name,lat_min,lat_max,lon_min,lon_max,description
+Z0,No Zone,0.0,0.0,0.0,0.0,Represents events or entities not associated with a specific zone.
+Z1,Zone A - South 90,30.01,30.025,31.48,31.5,Busy commercial and residential area along South 90th Street.
+Z2,Zone B - North 90,30.01,30.025,31.5,31.52,Major commercial hub with large malls like Cairo Festival City.
+Z3,Zone C - AUC Area,30.025,30.04,31.48,31.495,The American University in Cairo campus and surrounding educational facilities.
+Z4,Zone D - Residential Districts,30.025,30.04,31.495,31.51,Primarily residential neighborhoods with villas and apartments.
+Z5,Zone E - Governmental Services,30.025,30.04,31.51,31.52,"Contains governmental buildings, police stations, and public service centers."

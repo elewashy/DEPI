@@ -1,0 +1,302 @@
+building_id,building_name,zone_id,building_type,owner_name,address,lat,lon,status
+B000,No Building,Z0,N/A,N/A,N/A,0.0,0.0,N/A
+B001,El-Fouad Hospital,Z1,Hospital,Mariam Ahmed,21 El Teseen St.,30.019476,31.493895,Active
+B002,El-Fouad Hospital,Z1,Hospital,Fatima Zahra,63 El Sadat Axis,30.01088,31.499342,Active
+B003,Delta Tower,Z2,Commercial,Omar Khaled,53 North Investors Area,30.023827,31.501375,Active
+B004,Misr Tower,Z1,Commercial,Youssef Hassan,42 Mostafa Kamel Axis,30.011038,31.487525,Active
+B005,Villa 83,Z5,Residential,Khaled El Masry,80 Mostafa Kamel Axis,30.030989,31.512318,Active
+B006,Concorde Mall,Z4,Mall,Ahmed Mahmoud,88 Mostafa Kamel Axis,30.039287,31.508427,Active
+B007,Villa 197,Z2,Residential,Ahmed Mahmoud,86 El Zohour District,30.018391,31.501852,Active
+B008,Villa 67,Z5,Residential,Ahmed Mahmoud,76 North Investors Area,30.039765,31.51508,Active
+B009,Concorde Mall,Z4,Mall,Salma Ali,1 El Choueifat St.,30.038967,31.50482,Active
+B010,Future School,Z3,Educational,Mohamed Adel,11 North Investors Area,30.037139,31.493379,Planned
+B011,Villa 97,Z1,Residential,Aya Mohamed,31 El Sadat Axis,30.020117,31.498777,Active
+B012,Villa 16,Z5,Residential,Ali Ibrahim,34 Gamal Abdel Nasser Axis,30.027895,31.515411,Active
+B013,Concorde Mall,Z4,Mall,Aya Mohamed,69 South Investors Area,30.037395,31.496196,Active
+B014,Modern School,Z3,Educational,Youssef Hassan,50 El Sadat Axis,30.03976,31.489278,Active
+B015,Villa 60,Z1,Residential,Aya Mohamed,7 Mostafa Kamel Axis,30.014967,31.481605,Active
+B016,Cleopatra Hospital,Z5,Hospital,Fatima Zahra,88 North Investors Area,30.025333,31.510124,Active
+B017,Concorde Mall,Z5,Mall,Aya Mohamed,84 El Sadat Axis,30.029842,31.516063,Active
+B018,Villa 55,Z5,Residential,Khaled El Masry,76 El Zohour District,30.025098,31.512337,Active
+B019,Cleopatra Hospital,Z1,Hospital,Fatima Zahra,97 Gamal Abdel Nasser Axis,30.023284,31.48512,Active
+B020,Cairo Tower,Z5,Commercial,Youssef Hassan,6 South Investors Area,30.038027,31.512424,Active
+B021,Cairo Tower,Z1,Commercial,Hassan El Shafei,20 El Sadat Axis,30.023289,31.48085,Planned
+B022,Delta Tower,Z4,Commercial,Khaled El Masry,10 El Sadat Axis,30.029735,31.495374,Active
+B023,Future School,Z1,Educational,Tarek El Shenawy,22 South Investors Area,30.021043,31.483608,Active
+B024,Villa 70,Z4,Residential,Mohamed Adel,10 North Investors Area,30.033283,31.500314,Under Maintenance
+B025,Villa 52,Z5,Residential,Fatima Zahra,56 El Sadat Axis,30.034005,31.511035,Active
+B026,Modern School,Z2,Educational,Youssef Hassan,51 El Zohour District,30.011704,31.512181,Active
+B027,Villa 132,Z3,Residential,Tarek El Shenawy,90 North Investors Area,30.031112,31.494143,Active
+B028,Villa 85,Z5,Residential,Aya Mohamed,68 South Investors Area,30.026209,31.514522,Active
+B029,Cleopatra Hospital,Z5,Hospital,Hassan El Shafei,59 El Teseen St.,30.02587,31.519255,Planned
+B030,Cairo Tower,Z2,Commercial,Omar Khaled,23 North Investors Area,30.012535,31.504454,Active
+B031,Villa 102,Z3,Residential,Mohamed Adel,21 El Sadat Axis,30.028514,31.493038,Active
+B032,Villa 152,Z3,Residential,Khaled El Masry,98 El Choueifat St.,30.035187,31.491381,Active
+B033,Villa 123,Z5,Residential,Aya Mohamed,33 North Investors Area,30.038554,31.519638,Active
+B034,El-Karma Hospital,Z5,Hospital,Mohamed Adel,40 El Zohour District,30.035047,31.511649,Under Maintenance
+B035,Cairo Tower,Z1,Commercial,Hassan El Shafei,16 North Investors Area,30.012144,31.495573,Active
+B036,Villa 17,Z4,Residential,Tarek El Shenawy,69 El Choueifat St.,30.02852,31.509647,Active
+B037,Al-Alson School,Z4,Educational,Aya Mohamed,19 El Sadat Axis,30.034042,31.498944,Active
+B038,Villa 46,Z3,Residential,Mohamed Adel,39 El Teseen St.,30.035,31.481424,Active
+B039,Point 90 Mall,Z2,Mall,Ahmed Mahmoud,87 El Sadat Axis,30.023318,31.518858,Active
+B040,Cairo Tower,Z5,Commercial,Khaled El Masry,55 Mostafa Kamel Axis,30.030655,31.519265,Active
+B041,Concorde Mall,Z5,Mall,Fatima Zahra,76 Mostafa Kamel Axis,30.034377,31.511693,Active
+B042,Villa 45,Z5,Residential,Hassan El Shafei,66 North Investors Area,30.028032,31.514679,Active
+B043,Villa 180,Z5,Residential,Mona Abdelaziz,71 South Investors Area,30.037245,31.511646,Active
+B044,Villa 94,Z5,Residential,Ali Ibrahim,90 El Sadat Axis,30.028561,31.512075,Active
+B045,Point 90 Mall,Z4,Mall,Aya Mohamed,56 North Investors Area,30.035183,31.495382,Active
+B046,Delta Tower,Z1,Commercial,Nourhan Tarek,81 El Zohour District,30.023379,31.487693,Active
+B047,Cairo Tower,Z1,Commercial,Fatima Zahra,93 Mostafa Kamel Axis,30.019112,31.483243,Under Maintenance
+B048,Villa 80,Z2,Residential,Mohamed Adel,34 El Sadat Axis,30.011016,31.503576,Active
+B049,Villa 170,Z2,Residential,Khaled El Masry,75 Mostafa Kamel Axis,30.010131,31.515248,Active
+B050,Concorde Mall,Z2,Mall,Mohamed Adel,44 Mostafa Kamel Axis,30.020909,31.515078,Active
+B051,Delta Tower,Z1,Commercial,Fatima Zahra,98 El Zohour District,30.018256,31.486541,Active
+B052,Villa 51,Z4,Residential,Tarek El Shenawy,88 South Investors Area,30.025035,31.503758,Active
+B053,Villa 191,Z2,Residential,Mariam Ahmed,22 Mostafa Kamel Axis,30.024662,31.503421,Active
+B054,Villa 100,Z3,Residential,Ahmed Mahmoud,93 El Teseen St.,30.032911,31.489566,Active
+B055,Future School,Z5,Educational,Tarek El Shenawy,85 El Zohour District,30.025895,31.514265,Active
+B056,Delta Tower,Z5,Commercial,Aya Mohamed,45 South Investors Area,30.029074,31.519131,Active
+B057,Villa 187,Z1,Residential,Hassan El Shafei,60 Mostafa Kamel Axis,30.01725,31.491333,Under Maintenance
+B058,Villa 83,Z3,Residential,Khaled El Masry,96 El Zohour District,30.037531,31.484344,Active
+B059,El-Karma Hospital,Z4,Hospital,Salma Ali,17 Mostafa Kamel Axis,30.038021,31.50125,Active
+B060,Villa 30,Z1,Residential,Khaled El Masry,26 El Sadat Axis,30.012747,31.495482,Active
+B061,Delta Tower,Z1,Commercial,Amr Diab,55 South Investors Area,30.019662,31.487114,Active
+B062,Misr Tower,Z3,Commercial,Mohamed Adel,85 Mostafa Kamel Axis,30.033063,31.485771,Active
+B063,Villa 142,Z4,Residential,Mohamed Adel,47 El Zohour District,30.03773,31.504909,Active
+B064,Villa 165,Z5,Residential,Tarek El Shenawy,87 Gamal Abdel Nasser Axis,30.032071,31.512978,Active
+B065,Modern School,Z4,Educational,Mona Abdelaziz,47 Mostafa Kamel Axis,30.031744,31.496974,Active
+B066,Villa 137,Z1,Residential,Tarek El Shenawy,18 North Investors Area,30.018426,31.494533,Active
+B067,Delta Tower,Z4,Commercial,Aya Mohamed,56 El Teseen St.,30.038559,31.502242,Active
+B068,Villa 114,Z5,Residential,Ahmed Mahmoud,75 South Investors Area,30.036105,31.511585,Active
+B069,Villa 69,Z5,Residential,Mariam Ahmed,44 South Investors Area,30.032303,31.514266,Active
+B070,Villa 29,Z2,Residential,Tarek El Shenawy,22 El Sadat Axis,30.01762,31.503735,Active
+B071,Villa 109,Z2,Residential,Khaled El Masry,54 North Investors Area,30.010244,31.509537,Active
+B072,Villa 138,Z3,Residential,Khaled El Masry,89 Gamal Abdel Nasser Axis,30.026522,31.486479,Planned
+B073,El-Fouad Hospital,Z1,Hospital,Youssef Hassan,1 South Investors Area,30.022802,31.498246,Active
+B074,Cairo Tower,Z3,Commercial,Omar Khaled,5 Mostafa Kamel Axis,30.029012,31.492951,Active
+B075,Villa 63,Z4,Residential,Salma Ali,71 North Investors Area,30.025041,31.507317,Active
+B076,Cairo Tower,Z4,Commercial,Nourhan Tarek,37 El Sadat Axis,30.03912,31.498075,Active
+B077,Villa 94,Z5,Residential,Nourhan Tarek,48 South Investors Area,30.029199,31.514468,Active
+B078,Villa 13,Z5,Residential,Tarek El Shenawy,64 El Zohour District,30.039635,31.518796,Active
+B079,Misr Tower,Z2,Commercial,Mohamed Adel,71 El Choueifat St.,30.023831,31.511986,Active
+B080,Point 90 Mall,Z4,Mall,Omar Khaled,38 Mostafa Kamel Axis,30.037835,31.497176,Active
+B081,Villa 72,Z4,Residential,Youssef Hassan,42 El Zohour District,30.028959,31.503478,Active
+B082,Cleopatra Hospital,Z5,Hospital,Mariam Ahmed,39 El Choueifat St.,30.035937,31.51261,Active
+B083,Delta Tower,Z1,Commercial,Aya Mohamed,7 El Teseen St.,30.024397,31.496012,Active
+B084,Villa 48,Z5,Residential,Amr Diab,53 Mostafa Kamel Axis,30.030322,31.513116,Active
+B085,Villa 41,Z1,Residential,Nourhan Tarek,91 Mostafa Kamel Axis,30.02383,31.481365,Active
+B086,Future School,Z4,Educational,Youssef Hassan,29 El Choueifat St.,30.033367,31.503975,Active
+B087,El-Fouad Hospital,Z1,Hospital,Ahmed Mahmoud,13 Mostafa Kamel Axis,30.01697,31.485039,Active
+B088,Cleopatra Hospital,Z2,Hospital,Mohamed Adel,22 South Investors Area,30.013982,31.50772,Active
+B089,Villa 140,Z3,Residential,Amr Diab,32 Gamal Abdel Nasser Axis,30.030859,31.4876,Active
+B090,Villa 146,Z1,Residential,Youssef Hassan,3 El Choueifat St.,30.017816,31.492447,Active
+B091,Villa 200,Z2,Residential,Ali Ibrahim,40 El Zohour District,30.019246,31.501375,Active
+B092,Future School,Z5,Educational,Ahmed Mahmoud,47 Mostafa Kamel Axis,30.035073,31.511578,Active
+B093,Villa 177,Z2,Residential,Ali Ibrahim,94 Gamal Abdel Nasser Axis,30.02423,31.51598,Active
+B094,Future School,Z5,Educational,Ahmed Mahmoud,65 El Sadat Axis,30.031976,31.51033,Active
+B095,Villa 32,Z1,Residential,Nourhan Tarek,74 El Sadat Axis,30.024001,31.489724,Active
+B096,Delta Tower,Z3,Commercial,Omar Khaled,95 El Zohour District,30.036348,31.483871,Active
+B097,Future School,Z5,Educational,Tarek El Shenawy,67 El Sadat Axis,30.02728,31.514782,Active
+B098,Villa 17,Z5,Residential,Youssef Hassan,87 North Investors Area,30.03452,31.517166,Active
+B099,Cairo Tower,Z4,Commercial,Aya Mohamed,44 El Teseen St.,30.027817,31.498951,Planned
+B100,Cairo Tower,Z4,Commercial,Mona Abdelaziz,18 El Zohour District,30.032691,31.503739,Active
+B101,Villa 158,Z2,Residential,Khaled El Masry,23 El Choueifat St.,30.023621,31.505782,Active
+B102,Villa 117,Z3,Residential,Hassan El Shafei,52 Gamal Abdel Nasser Axis,30.031806,31.494177,Active
+B103,Concorde Mall,Z1,Mall,Hassan El Shafei,34 Gamal Abdel Nasser Axis,30.01813,31.498696,Active
+B104,Cairo Tower,Z5,Commercial,Tarek El Shenawy,79 Mostafa Kamel Axis,30.029738,31.51794,Active
+B105,Downtown Mall,Z3,Mall,Aya Mohamed,30 El Teseen St.,30.031101,31.490724,Active
+B106,Villa 159,Z2,Residential,Amr Diab,88 El Zohour District,30.01357,31.509682,Active
+B107,Misr Tower,Z5,Commercial,Youssef Hassan,87 El Zohour District,30.027991,31.5191,Active
+B108,Modern School,Z4,Educational,Salma Ali,7 El Teseen St.,30.033095,31.499255,Active
+B109,Villa 98,Z5,Residential,Aya Mohamed,48 El Teseen St.,30.033935,31.510165,Active
+B110,Villa 61,Z5,Residential,Mona Abdelaziz,32 South Investors Area,30.031507,31.519584,Active
+B111,Villa 81,Z3,Residential,Omar Khaled,59 North Investors Area,30.025471,31.481105,Active
+B112,Downtown Mall,Z2,Mall,Salma Ali,76 South Investors Area,30.016708,31.504371,Under Maintenance
+B113,Concorde Mall,Z4,Mall,Khaled El Masry,47 South Investors Area,30.030846,31.507483,Active
+B114,Villa 191,Z5,Residential,Ahmed Mahmoud,41 Gamal Abdel Nasser Axis,30.034602,31.517171,Active
+B115,Cairo Tower,Z4,Commercial,Amr Diab,65 El Teseen St.,30.035667,31.50425,Active
+B116,Villa 41,Z2,Residential,Salma Ali,91 Gamal Abdel Nasser Axis,30.019175,31.506097,Active
+B117,Villa 36,Z3,Residential,Salma Ali,96 El Teseen St.,30.02821,31.4905,Under Maintenance
+B118,Cairo Tower,Z4,Commercial,Khaled El Masry,61 Gamal Abdel Nasser Axis,30.025827,31.500105,Active
+B119,Villa 22,Z4,Residential,Mona Abdelaziz,72 South Investors Area,30.038357,31.501407,Active
+B120,Modern School,Z2,Educational,Hassan El Shafei,36 Gamal Abdel Nasser Axis,30.01686,31.514231,Active
+B121,Villa 61,Z5,Residential,Mohamed Adel,90 El Sadat Axis,30.037919,31.518073,Planned
+B122,Villa 101,Z4,Residential,Ali Ibrahim,27 Mostafa Kamel Axis,30.030725,31.505468,Active
+B123,Villa 102,Z1,Residential,Aya Mohamed,84 El Zohour District,30.01944,31.483932,Active
+B124,Villa 99,Z3,Residential,Youssef Hassan,7 Gamal Abdel Nasser Axis,30.026265,31.491598,Active
+B125,Villa 106,Z5,Residential,Hassan El Shafei,5 El Teseen St.,30.036226,31.512696,Under Maintenance
+B126,Future School,Z1,Educational,Mona Abdelaziz,30 Mostafa Kamel Axis,30.021216,31.481314,Active
+B127,Villa 164,Z3,Residential,Hassan El Shafei,91 Mostafa Kamel Axis,30.030649,31.488412,Active
+B128,Al-Alson School,Z5,Educational,Mohamed Adel,100 El Teseen St.,30.032892,31.510232,Active
+B129,Villa 186,Z1,Residential,Omar Khaled,74 El Teseen St.,30.016948,31.48068,Active
+B130,Misr Tower,Z4,Commercial,Aya Mohamed,4 El Zohour District,30.028954,31.501398,Active
+B131,Villa 114,Z1,Residential,Aya Mohamed,75 El Zohour District,30.010185,31.482119,Active
+B132,El-Fouad Hospital,Z4,Hospital,Hassan El Shafei,20 El Sadat Axis,30.037946,31.508354,Active
+B133,Villa 19,Z3,Residential,Youssef Hassan,77 Mostafa Kamel Axis,30.033541,31.494614,Active
+B134,Cairo Tower,Z5,Commercial,Fatima Zahra,90 El Sadat Axis,30.031487,31.510783,Active
+B135,Cairo Tower,Z3,Commercial,Ahmed Mahmoud,38 North Investors Area,30.037623,31.485991,Active
+B136,Villa 134,Z4,Residential,Mohamed Adel,6 El Choueifat St.,30.027948,31.506638,Active
+B137,Villa 96,Z4,Residential,Khaled El Masry,75 Mostafa Kamel Axis,30.038131,31.495877,Active
+B138,Point 90 Mall,Z1,Mall,Omar Khaled,16 North Investors Area,30.018325,31.480805,Active
+B139,Villa 171,Z3,Residential,Khaled El Masry,62 El Choueifat St.,30.03717,31.480226,Active
+B140,Villa 115,Z3,Residential,Khaled El Masry,70 Gamal Abdel Nasser Axis,30.034186,31.49079,Active
+B141,Modern School,Z4,Educational,Aya Mohamed,9 North Investors Area,30.032336,31.500754,Active
+B142,Delta Tower,Z4,Commercial,Salma Ali,27 El Choueifat St.,30.028693,31.497399,Active
+B143,Villa 116,Z5,Residential,Ahmed Mahmoud,71 South Investors Area,30.028777,31.515495,Active
+B144,Villa 40,Z2,Residential,Mariam Ahmed,22 South Investors Area,30.013752,31.517071,Active
+B145,Villa 48,Z1,Residential,Omar Khaled,19 South Investors Area,30.015306,31.485503,Active
+B146,Villa 158,Z1,Residential,Mona Abdelaziz,40 Mostafa Kamel Axis,30.021265,31.492619,Active
+B147,Downtown Mall,Z2,Mall,Mona Abdelaziz,29 Gamal Abdel Nasser Axis,30.01334,31.501041,Active
+B148,Villa 108,Z1,Residential,Aya Mohamed,21 Mostafa Kamel Axis,30.015613,31.481848,Active
+B149,Villa 48,Z3,Residential,Youssef Hassan,30 El Teseen St.,30.033667,31.494754,Active
+B150,Point 90 Mall,Z5,Mall,Tarek El Shenawy,98 El Teseen St.,30.028921,31.518014,Active
+B151,Villa 186,Z3,Residential,Salma Ali,54 North Investors Area,30.035685,31.484527,Active
+B152,Cleopatra Hospital,Z2,Hospital,Mona Abdelaziz,81 El Zohour District,30.013265,31.508035,Active
+B153,Villa 103,Z3,Residential,Mariam Ahmed,67 Gamal Abdel Nasser Axis,30.038778,31.481412,Active
+B154,Villa 149,Z2,Residential,Fatima Zahra,47 El Teseen St.,30.021668,31.504537,Active
+B155,Delta Tower,Z3,Commercial,Khaled El Masry,18 El Sadat Axis,30.035884,31.494962,Active
+B156,Villa 121,Z3,Residential,Nourhan Tarek,21 El Choueifat St.,30.026255,31.485644,Active
+B157,Point 90 Mall,Z3,Mall,Ahmed Mahmoud,93 El Zohour District,30.030448,31.491522,Active
+B158,Villa 140,Z3,Residential,Mariam Ahmed,46 South Investors Area,30.033927,31.493696,Active
+B159,Villa 83,Z2,Residential,Salma Ali,22 North Investors Area,30.023593,31.500245,Active
+B160,Villa 171,Z3,Residential,Aya Mohamed,97 North Investors Area,30.026584,31.494529,Active
+B161,Villa 169,Z4,Residential,Amr Diab,31 North Investors Area,30.031488,31.504055,Active
+B162,Downtown Mall,Z4,Mall,Ahmed Mahmoud,67 North Investors Area,30.036622,31.503674,Active
+B163,Villa 64,Z4,Residential,Hassan El Shafei,20 North Investors Area,30.028571,31.500916,Active
+B164,Villa 34,Z4,Residential,Youssef Hassan,12 El Sadat Axis,30.034407,31.50259,Active
+B165,Concorde Mall,Z1,Mall,Nourhan Tarek,53 Mostafa Kamel Axis,30.024736,31.492231,Active
+B166,Villa 193,Z1,Residential,Mohamed Adel,38 South Investors Area,30.021994,31.486901,Active
+B167,Delta Tower,Z2,Commercial,Fatima Zahra,37 Gamal Abdel Nasser Axis,30.021945,31.508274,Active
+B168,Point 90 Mall,Z4,Mall,Youssef Hassan,78 South Investors Area,30.02509,31.508498,Active
+B169,Future School,Z2,Educational,Youssef Hassan,81 Mostafa Kamel Axis,30.017411,31.509413,Active
+B170,Villa 105,Z3,Residential,Salma Ali,95 El Sadat Axis,30.025696,31.482062,Active
+B171,Villa 104,Z3,Residential,Hassan El Shafei,7 Mostafa Kamel Axis,30.031873,31.486689,Active
+B172,Cairo Tower,Z2,Commercial,Khaled El Masry,56 Mostafa Kamel Axis,30.011657,31.510883,Active
+B173,Modern School,Z5,Educational,Mona Abdelaziz,41 Gamal Abdel Nasser Axis,30.033315,31.516407,Active
+B174,Villa 80,Z2,Residential,Omar Khaled,94 Gamal Abdel Nasser Axis,30.011201,31.510669,Active
+B175,Villa 80,Z5,Residential,Ahmed Mahmoud,2 El Zohour District,30.028957,31.511174,Active
+B176,Villa 46,Z1,Residential,Mona Abdelaziz,91 Mostafa Kamel Axis,30.014938,31.491355,Active
+B177,Villa 140,Z5,Residential,Mariam Ahmed,59 El Teseen St.,30.027935,31.51979,Active
+B178,Modern School,Z4,Educational,Fatima Zahra,11 El Choueifat St.,30.030439,31.505354,Planned
+B179,Villa 70,Z2,Residential,Mariam Ahmed,78 El Choueifat St.,30.010006,31.509705,Active
+B180,Delta Tower,Z5,Commercial,Aya Mohamed,60 North Investors Area,30.028669,31.517667,Active
+B181,Villa 43,Z1,Residential,Tarek El Shenawy,100 Mostafa Kamel Axis,30.014431,31.482668,Active
+B182,Delta Tower,Z1,Commercial,Nourhan Tarek,16 El Teseen St.,30.015323,31.485988,Active
+B183,Cairo Tower,Z4,Commercial,Mona Abdelaziz,70 Gamal Abdel Nasser Axis,30.034833,31.506838,Active
+B184,Villa 47,Z1,Residential,Ali Ibrahim,54 El Teseen St.,30.022681,31.499257,Active
+B185,Villa 139,Z3,Residential,Hassan El Shafei,98 Gamal Abdel Nasser Axis,30.03291,31.486545,Active
+B186,Misr Tower,Z1,Commercial,Tarek El Shenawy,9 South Investors Area,30.017411,31.485051,Planned
+B187,Villa 73,Z3,Residential,Mona Abdelaziz,36 Mostafa Kamel Axis,30.028001,31.480813,Active
+B188,Al-Alson School,Z5,Educational,Mona Abdelaziz,79 Gamal Abdel Nasser Axis,30.02647,31.511,Active
+B189,Delta Tower,Z4,Commercial,Omar Khaled,60 South Investors Area,30.0268,31.50594,Active
+B190,Delta Tower,Z4,Commercial,Mohamed Adel,66 El Teseen St.,30.031567,31.500473,Active
+B191,Future School,Z1,Educational,Mona Abdelaziz,59 Mostafa Kamel Axis,30.016717,31.492128,Active
+B192,Villa 97,Z4,Residential,Mohamed Adel,88 El Teseen St.,30.039842,31.496882,Active
+B193,Cairo Tower,Z3,Commercial,Mona Abdelaziz,6 El Choueifat St.,30.02897,31.481873,Planned
+B194,Misr Tower,Z4,Commercial,Mona Abdelaziz,13 North Investors Area,30.032715,31.498141,Active
+B195,Cairo Tower,Z3,Commercial,Youssef Hassan,80 El Sadat Axis,30.037517,31.490012,Active
+B196,Villa 13,Z2,Residential,Mariam Ahmed,27 Mostafa Kamel Axis,30.020616,31.515367,Active
+B197,Downtown Mall,Z2,Mall,Salma Ali,41 Gamal Abdel Nasser Axis,30.018636,31.508093,Active
+B198,Cairo Tower,Z5,Commercial,Omar Khaled,63 Gamal Abdel Nasser Axis,30.033505,31.513689,Active
+B199,El-Karma Hospital,Z4,Hospital,Youssef Hassan,30 Mostafa Kamel Axis,30.02703,31.497572,Active
+B200,Villa 83,Z3,Residential,Ahmed Mahmoud,67 El Choueifat St.,30.029204,31.491703,Active
+B201,Modern School,Z4,Educational,Ahmed Mahmoud,5 Mostafa Kamel Axis,30.037332,31.496655,Active
+B202,Villa 136,Z2,Residential,Mona Abdelaziz,28 South Investors Area,30.017373,31.505555,Active
+B203,El-Karma Hospital,Z2,Hospital,Mohamed Adel,8 Gamal Abdel Nasser Axis,30.016628,31.504969,Active
+B204,Villa 84,Z5,Residential,Mona Abdelaziz,61 Gamal Abdel Nasser Axis,30.027087,31.517691,Active
+B205,Villa 67,Z1,Residential,Youssef Hassan,11 El Sadat Axis,30.02236,31.494892,Active
+B206,Villa 95,Z3,Residential,Aya Mohamed,9 El Zohour District,30.025744,31.491749,Active
+B207,Cleopatra Hospital,Z5,Hospital,Aya Mohamed,91 El Choueifat St.,30.025623,31.514608,Active
+B208,Villa 198,Z1,Residential,Khaled El Masry,12 Gamal Abdel Nasser Axis,30.023445,31.491519,Active
+B209,Delta Tower,Z3,Commercial,Salma Ali,97 El Zohour District,30.027445,31.493872,Active
+B210,Concorde Mall,Z5,Mall,Mohamed Adel,95 El Choueifat St.,30.0355,31.510542,Active
+B211,Cairo Tower,Z5,Commercial,Salma Ali,43 El Choueifat St.,30.030641,31.516052,Active
+B212,Villa 7,Z1,Residential,Khaled El Masry,23 North Investors Area,30.017308,31.492655,Active
+B213,Delta Tower,Z2,Commercial,Ahmed Mahmoud,47 Gamal Abdel Nasser Axis,30.014375,31.505245,Active
+B214,Villa 174,Z3,Residential,Mohamed Adel,44 Gamal Abdel Nasser Axis,30.034639,31.482947,Active
+B215,Villa 77,Z5,Residential,Tarek El Shenawy,37 El Choueifat St.,30.038891,31.510737,Active
+B216,Villa 200,Z5,Residential,Nourhan Tarek,39 Gamal Abdel Nasser Axis,30.036102,31.516674,Active
+B217,Villa 119,Z5,Residential,Mohamed Adel,23 North Investors Area,30.037445,31.516672,Active
+B218,Villa 16,Z5,Residential,Tarek El Shenawy,17 El Teseen St.,30.02578,31.513408,Active
+B219,Villa 85,Z4,Residential,Amr Diab,5 Gamal Abdel Nasser Axis,30.035033,31.505547,Planned
+B220,Villa 200,Z4,Residential,Aya Mohamed,72 Mostafa Kamel Axis,30.0289,31.502381,Active
+B221,Villa 128,Z5,Residential,Nourhan Tarek,8 South Investors Area,30.029984,31.519104,Active
+B222,Villa 141,Z3,Residential,Mona Abdelaziz,50 North Investors Area,30.038108,31.480412,Active
+B223,Villa 77,Z5,Residential,Omar Khaled,34 El Teseen St.,30.032254,31.515143,Active
+B224,El-Karma Hospital,Z3,Hospital,Tarek El Shenawy,11 North Investors Area,30.035653,31.488625,Active
+B225,Villa 157,Z4,Residential,Mariam Ahmed,26 Gamal Abdel Nasser Axis,30.033837,31.507631,Planned
+B226,Villa 43,Z4,Residential,Ahmed Mahmoud,87 El Choueifat St.,30.035268,31.508182,Active
+B227,El-Karma Hospital,Z2,Hospital,Omar Khaled,92 El Teseen St.,30.017839,31.514556,Active
+B228,Villa 55,Z4,Residential,Mohamed Adel,38 El Choueifat St.,30.032866,31.495428,Active
+B229,Villa 44,Z2,Residential,Fatima Zahra,56 North Investors Area,30.02213,31.502162,Active
+B230,Villa 96,Z4,Residential,Khaled El Masry,21 Mostafa Kamel Axis,30.032311,31.500896,Under Maintenance
+B231,Misr Tower,Z5,Commercial,Amr Diab,12 North Investors Area,30.025066,31.51925,Active
+B232,Downtown Mall,Z3,Mall,Mariam Ahmed,51 Gamal Abdel Nasser Axis,30.035795,31.484134,Planned
+B233,Delta Tower,Z2,Commercial,Fatima Zahra,21 North Investors Area,30.020208,31.501499,Active
+B234,Villa 121,Z1,Residential,Nourhan Tarek,2 Gamal Abdel Nasser Axis,30.017633,31.486669,Active
+B235,Villa 133,Z5,Residential,Ali Ibrahim,24 Mostafa Kamel Axis,30.034257,31.512385,Active
+B236,Villa 142,Z4,Residential,Youssef Hassan,30 North Investors Area,30.039214,31.499875,Active
+B237,Villa 40,Z3,Residential,Ahmed Mahmoud,47 El Choueifat St.,30.030781,31.482327,Active
+B238,Villa 138,Z2,Residential,Mariam Ahmed,19 South Investors Area,30.014522,31.519374,Active
+B239,Al-Alson School,Z4,Educational,Mona Abdelaziz,46 El Sadat Axis,30.034937,31.498071,Active
+B240,Misr Tower,Z3,Commercial,Mariam Ahmed,61 El Sadat Axis,30.033454,31.486572,Active
+B241,Villa 154,Z5,Residential,Mona Abdelaziz,77 El Teseen St.,30.034775,31.515339,Active
+B242,Villa 82,Z1,Residential,Omar Khaled,18 El Sadat Axis,30.02312,31.487989,Active
+B243,Cleopatra Hospital,Z3,Hospital,Mona Abdelaziz,52 Mostafa Kamel Axis,30.034026,31.48407,Active
+B244,Villa 113,Z3,Residential,Khaled El Masry,86 North Investors Area,30.031513,31.481798,Active
+B245,Delta Tower,Z2,Commercial,Ahmed Mahmoud,37 North Investors Area,30.01748,31.501406,Active
+B246,Delta Tower,Z3,Commercial,Mona Abdelaziz,61 South Investors Area,30.034598,31.482169,Under Maintenance
+B247,El-Karma Hospital,Z5,Hospital,Hassan El Shafei,55 Mostafa Kamel Axis,30.037067,31.519475,Active
+B248,Villa 111,Z5,Residential,Salma Ali,91 North Investors Area,30.035637,31.516224,Active
+B249,Delta Tower,Z5,Commercial,Khaled El Masry,82 El Zohour District,30.036193,31.512563,Active
+B250,Cleopatra Hospital,Z3,Hospital,Khaled El Masry,68 El Choueifat St.,30.025067,31.492313,Active
+B251,Villa 58,Z1,Residential,Nourhan Tarek,2 El Sadat Axis,30.010205,31.487338,Active
+B252,Misr Tower,Z4,Commercial,Hassan El Shafei,29 El Zohour District,30.030235,31.49847,Active
+B253,Delta Tower,Z5,Commercial,Fatima Zahra,37 South Investors Area,30.028687,31.511538,Active
+B254,Villa 63,Z5,Residential,Khaled El Masry,98 Mostafa Kamel Axis,30.038508,31.511457,Active
+B255,Villa 137,Z1,Residential,Amr Diab,27 El Zohour District,30.015029,31.490932,Active
+B256,Villa 83,Z2,Residential,Omar Khaled,92 El Sadat Axis,30.018033,31.506729,Active
+B257,Villa 73,Z3,Residential,Mona Abdelaziz,69 El Teseen St.,30.039519,31.491871,Active
+B258,Villa 159,Z1,Residential,Hassan El Shafei,47 Gamal Abdel Nasser Axis,30.014302,31.487298,Active
+B259,Villa 30,Z3,Residential,Salma Ali,99 North Investors Area,30.027222,31.485981,Under Maintenance
+B260,Villa 195,Z2,Residential,Mohamed Adel,41 El Sadat Axis,30.019763,31.508626,Active
+B261,Villa 173,Z3,Residential,Nourhan Tarek,24 El Zohour District,30.037876,31.484673,Active
+B262,Delta Tower,Z5,Commercial,Ahmed Mahmoud,97 El Zohour District,30.037672,31.514425,Active
+B263,Delta Tower,Z5,Commercial,Omar Khaled,56 El Choueifat St.,30.035437,31.517859,Active
+B264,Misr Tower,Z1,Commercial,Salma Ali,53 El Sadat Axis,30.023759,31.499629,Active
+B265,El-Karma Hospital,Z4,Hospital,Salma Ali,28 South Investors Area,30.026791,31.504864,Under Maintenance
+B266,Villa 87,Z2,Residential,Youssef Hassan,12 North Investors Area,30.017841,31.517627,Active
+B267,Villa 200,Z5,Residential,Salma Ali,12 Mostafa Kamel Axis,30.029046,31.518793,Active
+B268,Downtown Mall,Z3,Mall,Salma Ali,65 Mostafa Kamel Axis,30.036211,31.490487,Active
+B269,Delta Tower,Z3,Commercial,Mona Abdelaziz,1 El Sadat Axis,30.030963,31.48341,Under Maintenance
+B270,Misr Tower,Z3,Commercial,Tarek El Shenawy,60 North Investors Area,30.026073,31.494183,Active
+B271,Concorde Mall,Z4,Mall,Amr Diab,83 North Investors Area,30.027536,31.503427,Active
+B272,Cleopatra Hospital,Z5,Hospital,Salma Ali,50 El Sadat Axis,30.036338,31.518222,Active
+B273,Delta Tower,Z2,Commercial,Fatima Zahra,60 El Sadat Axis,30.013764,31.50038,Active
+B274,Misr Tower,Z1,Commercial,Salma Ali,34 El Zohour District,30.0246,31.497702,Active
+B275,Misr Tower,Z2,Commercial,Mohamed Adel,45 El Choueifat St.,30.017557,31.517547,Active
+B276,Concorde Mall,Z4,Mall,Fatima Zahra,23 Mostafa Kamel Axis,30.030868,31.504965,Active
+B277,Villa 3,Z4,Residential,Hassan El Shafei,90 El Zohour District,30.037417,31.5,Active
+B278,Delta Tower,Z4,Commercial,Amr Diab,60 Mostafa Kamel Axis,30.032855,31.5097,Active
+B279,Villa 32,Z1,Residential,Tarek El Shenawy,58 El Sadat Axis,30.023269,31.498468,Active
+B280,Villa 186,Z4,Residential,Khaled El Masry,75 El Teseen St.,30.030579,31.501204,Active
+B281,El-Fouad Hospital,Z2,Hospital,Khaled El Masry,3 El Sadat Axis,30.024181,31.501538,Active
+B282,Villa 25,Z3,Residential,Khaled El Masry,77 El Zohour District,30.029588,31.490948,Active
+B283,Villa 141,Z5,Residential,Tarek El Shenawy,89 El Choueifat St.,30.036611,31.51789,Planned
+B284,Cleopatra Hospital,Z3,Hospital,Mohamed Adel,64 Mostafa Kamel Axis,30.030263,31.484265,Planned
+B285,Cairo Tower,Z3,Commercial,Khaled El Masry,27 South Investors Area,30.039438,31.48473,Active
+B286,Concorde Mall,Z4,Mall,Ahmed Mahmoud,25 North Investors Area,30.036201,31.508531,Active
+B287,Villa 103,Z1,Residential,Fatima Zahra,71 Gamal Abdel Nasser Axis,30.01101,31.482343,Active
+B288,Villa 61,Z3,Residential,Mariam Ahmed,38 South Investors Area,30.026296,31.481145,Active
+B289,Villa 40,Z3,Residential,Salma Ali,96 North Investors Area,30.030308,31.481977,Active
+B290,Cairo Tower,Z3,Commercial,Aya Mohamed,90 Gamal Abdel Nasser Axis,30.037519,31.486615,Active
+B291,Cairo Tower,Z5,Commercial,Tarek El Shenawy,43 El Choueifat St.,30.035213,31.510624,Active
+B292,Villa 13,Z3,Residential,Ahmed Mahmoud,39 South Investors Area,30.032832,31.4941,Under Maintenance
+B293,El-Fouad Hospital,Z5,Hospital,Ahmed Mahmoud,18 North Investors Area,30.036339,31.51413,Active
+B294,Cairo Tower,Z4,Commercial,Amr Diab,73 El Zohour District,30.038935,31.497783,Active
+B295,Future School,Z3,Educational,Aya Mohamed,22 El Choueifat St.,30.03095,31.48445,Planned
+B296,El-Karma Hospital,Z3,Hospital,Ali Ibrahim,2 El Zohour District,30.030858,31.484998,Active
+B297,El-Karma Hospital,Z2,Hospital,Omar Khaled,3 Gamal Abdel Nasser Axis,30.020303,31.501092,Active
+B298,Delta Tower,Z1,Commercial,Mohamed Adel,64 Gamal Abdel Nasser Axis,30.020321,31.489514,Active
+B299,Villa 46,Z4,Residential,Omar Khaled,22 Mostafa Kamel Axis,30.038345,31.504333,Active
+B300,Modern School,Z3,Educational,Mariam Ahmed,100 El Choueifat St.,30.038108,31.485769,Active
