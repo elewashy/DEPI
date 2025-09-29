@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/Talend-FF6D00?style=for-the-badge&logo=talend&logoColor=white" alt="Talend"/>
   <img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache-Airflow&logoColor=white" alt="Apache Airflow"/>
+  <img src="https://img.shields.io/badge/Data%20Modeling-008080?style=for-the-badge" alt="Data Modeling"/>
 </p>
 
 This project demonstrates the end-to-end process of building a data warehouse. It begins with raw, source data from various city services and transforms it into a structured **Galaxy Schema** optimized for analytics and business intelligence. The unique aspect of this repository is that it implements the same data pipeline using three different technology stacks, plus an orchestration layer with Airflow.
