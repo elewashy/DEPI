@@ -1,59 +1,53 @@
-# Orchestrating Talend Jobs with Apache Airflow
+# Orchestrating the Smart City ETL Pipeline with Apache Airflow
 
-This document explains how Apache Airflow is used to schedule, execute, and monitor the Talend ETL jobs developed for the Smart City project.
+This document explains how Apache Airflow is used to schedule and execute the unified Talend ETL job for the Smart City project.
 
 ## Overview
 
-Apache Airflow is an open-source platform for programmatically authoring, scheduling, and monitoring workflows. By integrating our Talend jobs with Airflow, we gain the ability to automate the entire data pipeline, set complex schedules, handle failures and retries, and have a centralized view of all our ETL executions.
+Instead of managing multiple individual jobs, the ETL process has been consolidated into a single **master Talend job** (`Run_All_Jobs_Smart_City_ETL`). This simplifies orchestration significantly. Apache Airflow is now configured to run this one job, which in turn handles the entire data pipeline from dimensions to facts.
 
 ---
 
-## Project Structure
+## Airflow DAG for the Unified Job
 
-The Airflow-related files are located in the `Smart_City_Airflow/` directory. For this integration to work, this directory should be placed inside the `dags` folder of your Airflow instance.
+A new, simplified DAG has been created to orchestrate the master job.
 
-```
-<airflow_home>/dags/
-└── Smart_City_Airflow/
-    ├── Smart_City/
-    │   ├── into_data_into_dim_buildings/
-    │   │   ├── into_data_into_dim_buildings_run.sh
-    │   │   └── ... (other Talend job files)
-    │   ├── into_data_into_fact_bus_gps/
-    │   │   ├── into_data_into_fact_bus_gps_run.sh
-    │   │   └── ...
-    │   └── ... (directories for all other exported Talend jobs)
-    └── talend_jobs_dag.py
-```
+-   **DAG File:** `smart_city_etl_dag.py`
+-   **DAG ID:** `smart_city_etl`
+-   **Purpose:** This DAG has a single task that executes the master Talend job. It is scheduled to run daily, ensuring the data warehouse is updated regularly.
 
--   **`talend_jobs_dag.py`**: This is the core Python script that defines the Airflow DAGs.
--   **`Smart_City/`**: This directory acts as a container for all the standalone Talend jobs that have been built and exported. Each sub-directory (e.g., `into_data_into_dim_buildings/`) contains the executable shell script (`.sh`), JAR files, and other dependencies needed to run that specific Talend job.
+### Key Features of the DAG:
+-   **Simplicity:** Manages a single `PythonOperator` task instead of multiple dynamic tasks.
+-   **Robustness:** Includes retries, timeouts, and detailed logging through the Python `subprocess` module.
+-   **Scheduling:** Configured to run daily at 2 AM.
 
 ---
 
-## Dynamic DAG Generation
+## How it Works
 
-Instead of creating a separate DAG file for each Talend job, a dynamic approach is used.
+1.  **Talend Job Export:** The master Talend job (`Run_All_Jobs_Smart_City_ETL`) is exported as a standalone executable.
+2.  **Deployment:** The exported job folder is placed in a known location on the Airflow machine (e.g., `/opt/airflow/jobs/`).
+3.  **DAG Execution:**
+    -   The `smart_city_etl` DAG is triggered by the Airflow scheduler.
+    -   The `PythonOperator` calls a function that executes the `.sh` script of the master Talend job using Python's `subprocess` module.
+    -   The output and any errors from the Talend job are captured and logged in Airflow, providing a centralized place for monitoring.
 
--   **Script:** `talend_jobs_dag.py`
--   **Logic:**
-    1.  **Scan Directory:** The script scans the `Smart_City/` directory to find all the sub-directories, where each directory represents an individual Talend job.
-    2.  **Generate DAGs:** For each job directory found, it dynamically creates a new Airflow DAG. The DAG is named based on the directory name (e.g., `talend_into_data_into_dim_buildings`).
-    3.  **Create Bash Task:** Each DAG consists of a single `BashOperator` task. This task is configured to:
-        -   Make the `.sh` run script executable (`chmod +x`).
-        -   Execute the shell script, which in turn runs the Java-based Talend job.
+### Successful Execution in Airflow
 
-This dynamic generation means that to add a new Talend job to Airflow, you simply need to export the job and place it in the `Smart_City/` directory. Airflow will automatically detect it and create a new DAG for it on the next scheduler refresh.
+Once the DAG runs successfully, it will appear in the Airflow UI as follows, indicating that the entire ETL pipeline has completed.
+
+![Airflow Success](airflow_success.png)
 
 ---
 
 ## How to Use
 
-1.  **Export Talend Jobs:** Build each of your Talend jobs as a standalone "Autonomous Job".
-2.  **Deploy to Airflow:**
-    -   Copy the entire `Smart_City_Airflow` folder (which includes the `talend_jobs_dag.py` file and the `Smart_City` directory with all the exported jobs) into the `dags` folder of your Airflow installation.
-    -   The default path in the DAG is set to `/opt/airflow/dags/Smart_City`. You may need to adjust the `TALEND_JOBS_BASE_PATH` variable in `talend_jobs_dag.py` if your Airflow setup is different.
-3.  **Enable in Airflow UI:**
-    -   After a few moments, Airflow will parse the DAG file.
-    -   In the Airflow web UI, you will see a new DAG for each Talend job (e.g., `talend_into_data_into_dim_buildings`).
-    -   You can then enable these DAGs, trigger them manually, or set them to run on a schedule.
+1.  **Export the Master Talend Job:** Build the `Run_All_Jobs_Smart_City_ETL` job as a standalone "Autonomous Job".
+2.  **Deploy Job to Airflow Machine:**
+    -   Copy the exported job folder (e.g., `Run_All_Jobs_Smart_City_ETL`) to a directory on your Airflow worker/scheduler machine (e.g., `/opt/airflow/jobs/`).
+    -   **Important:** Ensure the path in the `smart_city_etl_dag.py` file (`script_path` and `working_dir` variables) matches the location where you placed the job.
+3.  **Deploy DAG:**
+    -   Copy the `smart_city_etl_dag.py` file into your Airflow `dags` folder.
+4.  **Enable in Airflow UI:**
+    -   In the Airflow web UI, find and enable the `smart_city_etl` DAG.
+    -   You can trigger it manually or wait for its daily schedule to run.

@@ -4,32 +4,30 @@
 
 This document provides a detailed explanation of the ETL (Extract, Transform, Load) process designed using Talend. The goal of this project is to build a Data Warehouse for a smart city, enabling the analysis of various data such as energy consumption, traffic, and bus locations.
 
-Data is extracted from an operational (OLTP) database named `SmartCity`, then transformed, cleaned, and loaded into the `SmartCityDWH` data warehouse, which is designed with a Star Schema model.
+Data is extracted from an operational (OLTP) database named `SmartCity`, then transformed, cleaned, and loaded into the `SmartCityDWH` data warehouse, which is designed with a Galaxy Schema model.
 
 ---
 
-## Architecture
+## Master Job Orchestration
 
-### 1. Source Database
+To simplify execution and ensure the correct order of operations, a master job named `Run_All_Jobs_Smart_City_ETL` was created in Talend. This job orchestrates the entire ETL pipeline by running all the individual dimension and fact loading jobs in the correct sequence.
 
--   **Name:** `SmartCity`
--   **Description:** An operational (OLTP) database containing daily data for smart city services.
--   **DDL File:** `data_with_talend/ddl_smart_city.sql`
--   **Data Load File:** `data_with_talend/load_data_smart_city.sql`
+-   **Purpose**: Acts as a single entry point for the entire ETL process.
+-   **Logic**: Uses `tRunJob` components to call each child job (e.g., `into_data_into_dim_buildings`, `into_data_into_fact_bus_gps`) in a specific order, ensuring that dimensions are loaded before the facts that depend on them.
+-   **Benefit**: This approach centralizes control and simplifies scheduling, as only this one master job needs to be executed.
 
-### 2. Data Warehouse
-
--   **Name:** `SmartCityDWH`
--   **Description:** An analytical (OLAP) data warehouse containing dimension and fact tables to facilitate analysis and reporting.
--   **DDL File:** `data_with_talend/ddl_smart_city_dwh.sql`
+![Master Talend Job](run_all_jobs_talend.png)
 
 ---
 
-## Talend ETL Jobs
+## Individual Job Patterns
 
-Two main jobs were designed in Talend to load data into the data warehouse.
+The master job calls a series of individual child jobs. The full project contains a separate job for each dimension and fact table. The jobs detailed below are **examples** that demonstrate the two primary patterns used throughout the project:
 
-### Job 1: Loading `dim_buildings` Dimension (SCD Type 2)
+1.  **SCD Type 2 Pattern** for dimensions that require historical tracking.
+2.  **Fact with Dimension Lookup Pattern** for fact tables.
+
+### Example 1: `dim_buildings` (SCD Type 2 Pattern)
 
 <img src="dim_buildings.png" alt="Talend Job for dim_buildings" width="600"/>
 
@@ -59,7 +57,7 @@ This job is responsible for loading and processing building data into the `dim_b
 
 ---
 
-### Job 2: Loading `fact_bus_gps` Fact Table
+### Example 2: `fact_bus_gps` (Fact with Dimension Lookup Pattern)
 
 <img src="fact_bus_gps.png" alt="Talend Job for fact_bus_gps" width="700"/>
 
@@ -86,34 +84,7 @@ This job is responsible for loading bus GPS tracking data into the `fact_bus_gps
 
 ---
 
-## Generalized ETL Job Patterns
+### General Logic for Other Jobs
 
-The following sections describe the general patterns for loading the remaining dimension and fact tables, based on the examples provided and the data warehouse schema.
-
-### General Pattern for Loading Other Dimension Tables
-
-The other dimension tables in the data warehouse (`dim_calendar`, `dim_devices`, `dim_trucks`, `dim_bus_routes`, `dim_event_types`, `dim_zones`) do not appear to require SCD Type 2 history tracking. They can be loaded using a simpler, more direct ETL pattern, likely as SCD Type 1 (overwrite updates) or a simple truncate-and-load.
-
-#### Assumed Logic (SCD Type 1)
-
-1.  **Source Input:** A `tDBInput` component reads data from the corresponding source table in the `SmartCity` database (e.g., `zones` for `dim_zones`).
-2.  **Mapping:** A `tMap` component performs a direct one-to-one mapping of columns from the source to the target dimension table. It would also be used to generate the surrogate key (`_sk`) if it's not an identity column and add metadata like `entry_date_key`.
-3.  **Target Output:** A `tDBOutput` component writes the data to the target dimension table in `SmartCityDWH`. The "Action on data" would typically be set to **"Insert or Update"**.
-    -   It would use the business key (e.g., `zone_id`) to check for the existence of a record.
-    -   If the record is new, it's inserted.
-    -   If the record exists, it's updated with the latest values from the source.
-
-### General Pattern for Loading Other Fact Tables
-
-The remaining fact tables (`fact_emergency_calls`, `fact_energy_consumption`, `fact_traffic`, `fact_waste_collection`) follow a similar pattern to `fact_bus_gps`. They involve reading transactional data and looking up surrogate keys from the corresponding dimension tables.
-
-#### Assumed Logic
-
-1.  **Main Source Input:** A `tDBInput` reads the main transactional data from the source database (e.g., `emergency_calls` for `fact_emergency_calls`).
-2.  **Lookup Inputs:** Multiple `tDBInput` components are configured as lookups to read from the relevant dimension tables (e.g., `dim_calendar`, `dim_zones`, `dim_buildings`, `dim_event_types`).
-3.  **Mapping and Transformation (`tMap`):**
-    -   The main source flow is joined with each dimension lookup flow inside the `tMap`.
-    -   The join condition matches the business key from the source data (e.g., `building_id`) with the business key in the dimension table.
-    -   The surrogate key (e.g., `building_sk`) from each dimension is retrieved.
-    -   The output flow from the `tMap` consists of all the required surrogate keys and the measures/degenerate dimensions from the source fact data (e.g., `priority_level`, `response_time_minutes`).
-4.  **Target Output:** A `tDBOutput` component performs a standard insert of the fully formed fact records into the target fact table in `SmartCityDWH`.
+-   **Other Dimension Tables**: Dimensions that do not require history tracking (e.g., `dim_zones`, `dim_devices`) are loaded using a simple SCD Type 1 pattern (Insert/Update), which is a simplified version of the `dim_buildings` job.
+-   **Other Fact Tables**: All other fact tables (e.g., `fact_emergency_calls`, `fact_traffic`) follow the same lookup pattern demonstrated in the `fact_bus_gps` job. They read from a source fact table, look up the surrogate keys from all relevant dimension tables, and then insert the final record into the gold layer.

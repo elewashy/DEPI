@@ -14,7 +14,7 @@ The ETL process is divided into three distinct layers (schemas):
 
 1.  **Bronze (Raw Data):** Ingests raw data from source files without any transformation.
 2.  **Silver (Cleansed & Conformed):** Cleans the data and applies light transformations.
-3.  **Gold (Presentation):** Models the data into a star schema for analytics.
+3.  **Gold (Presentation):** Models the data into a galaxy schema for analytics.
 
 ![SQL ETL Flow](ETL.png)  
 *Note: This is a conceptual diagram; the actual flow is managed by SQL procedures.*
@@ -58,7 +58,7 @@ The Silver layer takes the raw data from the Bronze layer and applies basic clea
 
 ### 3. Gold Layer (Presentation Model)
 
-The Gold layer is the final, highly refined, and aggregated layer. The data is modeled into a classic star schema, which is optimal for business intelligence and analytics.
+The Gold layer is the final, highly refined, and aggregated layer. The data is modeled into a classic galaxy schema, which is optimal for business intelligence and analytics.
 
 -   **DDL Script:** `gold/ddl_gold_dwh.sql`
     -   **Action:** Creates the final data warehouse model in the `gold` schema.
@@ -67,7 +67,7 @@ The Gold layer is the final, highly refined, and aggregated layer. The data is m
     -   **Relationships:** Defines foreign key constraints between fact and dimension tables to enforce referential integrity.
 
 -   **ETL Script:** `gold/proc_load_gold.sql`
-    -   **Action:** This complex stored procedure (`gold.proc_load_gold`) loads the Silver data into the Gold star schema.
+    -   **Action:** This complex stored procedure (`gold.proc_load_gold`) loads the Silver data into the Gold galaxy schema.
     -   **Loading Dimensions (Non-SCD):** For most dimensions (`dim_zones`, `dim_devices`, etc.), it performs an incremental load. It inserts records from the silver layer if they do not already exist in the gold dimension (checked via the business key).
     -   **Loading `dim_buildings` (SCD Type 2):**
         -   The `dim_buildings` table is handled using a Slowly Changing Dimension Type 2 strategy to track historical changes.

@@ -74,7 +74,7 @@ The Silver layer cleans and applies basic transformations to the data from the B
 
 ### 3. Gold Layer (Presentation Model)
 
-The Gold layer transforms the cleansed data into a dimensional model (star schema) ready for analytics.
+The Gold layer transforms the cleansed data into a dimensional model (galaxy schema) ready for analytics.
 
 -   **Script:** `gold/load_gold.py`
 -   **Logic:** This is the most complex stage, broken down into several steps:
