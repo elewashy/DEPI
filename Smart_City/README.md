@@ -32,7 +32,8 @@ This project demonstrates the end-to-end process of building a data warehouse. I
 
 The core of this project is the **Medallion Architecture**, which ensures data quality and governance by moving data through distinct layers. The final `Gold` layer presents the data in a user-friendly Galaxy Schema.
 
-![ETL Architecture](docs/ETL.png)
+![Data Flow Architecture](docs/data_flow.png)
+![Data Flow Architecture](docs/data_flow_1.png)
 
 <br/>
 
