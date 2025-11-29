@@ -1,6 +1,6 @@
-# 🧪 SmartCity Data Pipeline - Test Results
-
 <div align="center">
+
+# 🧪 SmartCity Data Pipeline - Test Results
 
 [![Status](https://img.shields.io/badge/Status-All%20Tests%20Passed-success?style=for-the-badge)](.)
 [![Test Date](https://img.shields.io/badge/Test%20Date-November%2029%2C%202025-blue?style=for-the-badge)](.)
@@ -203,7 +203,8 @@ table_count: 12
 ```mermaid
 flowchart LR
     A[wait_for_sqlserver<br/>✅] --> B[restore_dwh_backup<br/>✅]
-    B --> C[verify_restore<br/>✅]    C --> D[wait_for_spark<br/>✅]
+    B --> C[verify_restore<br/>✅]
+    C --> D[wait_for_spark<br/>✅]
     C --> E[wait_for_hive<br/>✅]
     D --> F[setup_jdbc_driver<br/>✅]
     E --> G[create_hive_database<br/>✅]
