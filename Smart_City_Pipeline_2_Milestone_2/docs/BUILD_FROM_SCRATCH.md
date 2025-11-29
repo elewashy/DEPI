@@ -33,9 +33,17 @@ flowchart TB
     Airflow --> Test[Test Full Pipeline]
     Test --> Complete([Build Complete ✅])
 
-    style Start fill:#4CAF50,color:#fff
-    style ETL fill:#E25A1C,color:#fff
-    style Complete fill:#4CAF50,color:#fff
+    style Start fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:3px
+    style Clean fill:#4FC3F7,stroke:#0288D1,color:#000,stroke-width:2px
+    style Infra fill:#4FC3F7,stroke:#0288D1,color:#000,stroke-width:2px
+    style SQL fill:#81C784,stroke:#388E3C,color:#000,stroke-width:2px
+    style JDBC fill:#81C784,stroke:#388E3C,color:#000,stroke-width:2px
+    style Hive fill:#FFD54F,stroke:#F57C00,color:#000,stroke-width:2px
+    style ETL fill:#FF7043,stroke:#D84315,color:#fff,stroke-width:3px
+    style Verify fill:#BA68C8,stroke:#7B1FA2,color:#fff,stroke-width:2px
+    style Airflow fill:#64B5F6,stroke:#1976D2,color:#000,stroke-width:2px
+    style Test fill:#9575CD,stroke:#512DA8,color:#fff,stroke-width:2px
+    style Complete fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:3px
 ```
 
 ---

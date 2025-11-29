@@ -280,10 +280,10 @@ flowchart TD
     
     Troubleshoot --> AllGood
     
-    style Start fill:#4CAF50,color:#fff
-    style Ready fill:#4CAF50,color:#fff
-    style CheckLogs fill:#FF9800,color:#fff
-    style Troubleshoot fill:#FF9800,color:#fff
+    style Start fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:3px
+    style Ready fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:3px
+    style CheckLogs fill:#FFB74D,stroke:#F57C00,color:#000,stroke-width:2px
+    style Troubleshoot fill:#FFB74D,stroke:#F57C00,color:#000,stroke-width:2px
 ```
 
 ---

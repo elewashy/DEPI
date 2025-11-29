@@ -214,18 +214,18 @@ flowchart LR
     J --> K[generate_sample_report<br/>✅]
     K --> L[pipeline_complete<br/>✅]
 
-    style A fill:#4CAF50,color:#fff
-    style B fill:#4CAF50,color:#fff
-    style C fill:#4CAF50,color:#fff
-    style D fill:#4CAF50,color:#fff
-    style E fill:#4CAF50,color:#fff
-    style F fill:#4CAF50,color:#fff
-    style G fill:#4CAF50,color:#fff
-    style H fill:#4CAF50,color:#fff
-    style I fill:#4CAF50,color:#fff
-    style J fill:#4CAF50,color:#fff
-    style K fill:#4CAF50,color:#fff
-    style L fill:#4CAF50,color:#fff
+    style A fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style B fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style C fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style D fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style E fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style F fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style G fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style H fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style I fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style J fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style K fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:2px
+    style L fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:3px
 ```
 
 **All 12 tasks**: ✅ SUCCESS
@@ -250,11 +250,11 @@ flowchart LR
         Airflow -.orchestrates.-> Spark
     end
 
-    style SQL fill:#4CAF50,color:#fff
-    style Spark fill:#4CAF50,color:#fff
-    style Hive fill:#4CAF50,color:#fff
-    style Trino fill:#4CAF50,color:#fff
-    style Airflow fill:#4CAF50,color:#fff
+    style SQL fill:#CC2927,stroke:#CC2927,color:#fff,stroke-width:2px
+    style Spark fill:#E25A1C,stroke:#E25A1C,color:#fff,stroke-width:2px
+    style Hive fill:#FDEE21,stroke:#FDEE21,color:#000,stroke-width:2px
+    style Trino fill:#DD00A1,stroke:#DD00A1,color:#fff,stroke-width:2px
+    style Airflow fill:#017CEE,stroke:#017CEE,color:#fff,stroke-width:2px
 ```
 
 ---

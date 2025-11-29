@@ -1,6 +1,6 @@
-# 🏙️ SmartCity Data Pipeline
-
 <div align="center">
+
+# 🏙️ SmartCity Data Pipeline
 
 [![Docker](https://img.shields.io/badge/Docker-20.10%2B-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Apache Spark](https://img.shields.io/badge/Apache%20Spark-3.3.0-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)](https://spark.apache.org/)
@@ -46,12 +46,12 @@ flowchart LR
     Hive -->|Query Interface| Trino
     Airflow -.orchestrates.-> Spark
 
-    style SQL fill:#CC2927,color:#fff
-    style Spark fill:#E25A1C,color:#fff
-    style Hive fill:#FDEE21,color:#000
-    style Trino fill:#DD00A1,color:#fff
-    style Airflow fill:#017CEE,color:#fff
-    style HDFS fill:#66CCFF,color:#000
+    style SQL fill:#CC2927,stroke:#CC2927,color:#fff,stroke-width:2px
+    style Spark fill:#E25A1C,stroke:#E25A1C,color:#fff,stroke-width:2px
+    style Hive fill:#FDEE21,stroke:#FDEE21,color:#000,stroke-width:2px
+    style Trino fill:#DD00A1,stroke:#DD00A1,color:#fff,stroke-width:2px
+    style Airflow fill:#017CEE,stroke:#017CEE,color:#fff,stroke-width:2px
+    style HDFS fill:#66CCFF,stroke:#66CCFF,color:#000,stroke-width:2px
 ```
 
 ---
@@ -185,13 +185,18 @@ flowchart TB
     J --> K[generate_sample_report<br/>Create Report]
     K --> L[pipeline_complete<br/>✅ Done]
 
-    style A fill:#FFE5CC,stroke:#FF9900
-    style B fill:#FFE5CC,stroke:#FF9900
-    style C fill:#FFE5CC,stroke:#FF9900
-    style H fill:#E25A1C,color:#fff,stroke:#E25A1C,stroke-width:3px
-    style I fill:#FDEE21,stroke:#000
-    style J fill:#DD00A1,color:#fff,stroke:#DD00A1
-    style L fill:#4CAF50,color:#fff,stroke:#4CAF50
+    style A fill:#4FC3F7,stroke:#0288D1,color:#000,stroke-width:2px
+    style B fill:#4FC3F7,stroke:#0288D1,color:#000,stroke-width:2px
+    style C fill:#4FC3F7,stroke:#0288D1,color:#000,stroke-width:2px
+    style D fill:#81C784,stroke:#388E3C,color:#000,stroke-width:2px
+    style E fill:#81C784,stroke:#388E3C,color:#000,stroke-width:2px
+    style F fill:#81C784,stroke:#388E3C,color:#000,stroke-width:2px
+    style G fill:#81C784,stroke:#388E3C,color:#000,stroke-width:2px
+    style H fill:#FF7043,stroke:#D84315,color:#fff,stroke-width:3px
+    style I fill:#FFD54F,stroke:#F57C00,color:#000,stroke-width:2px
+    style J fill:#BA68C8,stroke:#7B1FA2,color:#fff,stroke-width:2px
+    style K fill:#9575CD,stroke:#512DA8,color:#fff,stroke-width:2px
+    style L fill:#66BB6A,stroke:#2E7D32,color:#fff,stroke-width:3px
 ```
 
 **Pipeline Duration**: ~4-6 minutes  
