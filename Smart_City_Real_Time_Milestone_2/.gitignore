@@ -1,0 +1,44 @@
+# Data and logs
+data/
+logs/
+airflow/logs/
+notebooks/.ipynb_checkpoints/
+
+# Spark streaming checkpoints
+checkpoint/
+checkpoint_*/
+hsperfdata*/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env.local
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.log
+*.tmp
+*.bak

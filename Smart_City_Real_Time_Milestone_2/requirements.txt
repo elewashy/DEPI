@@ -1,0 +1,12 @@
+# Python dependencies for Real-time Data Pipeline
+
+# Kafka Producer
+kafka-python==2.0.2
+
+# For Airflow DAG
+requests==2.31.0
+
+# Optional - for local development/testing
+pyspark==3.3.0
+pandas==2.0.3
+numpy==1.24.3
