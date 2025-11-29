@@ -608,7 +608,7 @@ graph LR
 ## 📁 Code Structure
 
 ```
-phase-1/
+Smart_City_Pipeline_Milestone_2/
 ├── 📄 README.md                          # Project overview
 ├── 📄 docker-compose.yml                 # Infrastructure definition
 ├── 📄 docker-compose.env                 # Environment variables
@@ -638,11 +638,7 @@ phase-1/
 │   ├── PROJECT_SUMMARY.md                # This file
 │   ├── STARTUP_GUIDE.md                  # Quick start guide
 │   ├── DEMO_OUTPUT.md                    # Sample outputs
-│   ├── ARCHITECTURE.md                   # Detailed architecture
-│   ├── CONTRIBUTING.md                   # Contribution guide
-│   ├── DEPLOYMENT.md                     # Production deployment
-│   ├── DATA_SCHEMA.md                    # Schema reference
-│   └── PERFORMANCE.md                    # Performance guide
+
 │
 ├── 📂 notebooks/                         # Jupyter notebooks
 │   └── data_exploration.ipynb            # Interactive analysis

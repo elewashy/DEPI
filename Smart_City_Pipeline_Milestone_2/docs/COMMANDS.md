@@ -1132,9 +1132,9 @@ airflow tasks logs <dag_id> <task_id>   # View logs
 
 1. 📖 [README.md](../README.md) - Project overview
 2. 🚀 [STARTUP_GUIDE.md](STARTUP_GUIDE.md) - Detailed setup
-3. 🏗️ [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture
+
 4. 📊 [DEMO_OUTPUT.md](DEMO_OUTPUT.md) - Expected outputs
-5. 🐛 [GitHub Issues](https://github.com/your-repo/issues) - Report bugs
+5. 🐛 [GitHub Issues](https://github.com/elewashy/DEPI/issues) - Report bugs
 
 **Quick help commands:**
 ```bash

@@ -71,7 +71,7 @@ ping -c 3 docker.io
 
 ```bash
 # Navigate to project directory
-cd /path/to/phase-1
+cd /path/to/DEPI/Smart_City_Pipeline_Milestone_2
 
 # 1. Start all containers (2-3 minutes)
 docker-compose up -d && echo "⏳ Waiting for services..." && sleep 120
@@ -645,7 +645,7 @@ Once your system is running:
 
 - [README.md](../README.md) - Project overview
 - [COMMANDS.md](COMMANDS.md) - Complete command reference
-- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture details
+
 - [DEMO_OUTPUT.md](DEMO_OUTPUT.md) - Sample outputs and results
 
 ---

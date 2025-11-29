@@ -41,8 +41,6 @@
 - [Use Cases](#-use-cases)
 - [Troubleshooting](#-troubleshooting)
 - [Documentation](#-documentation)
-- [Contributing](#-contributing)
-- [License](#-license)
 - [Acknowledgments](#-acknowledgments)
 
 ---
@@ -297,8 +295,8 @@ df -h                     # Check disk space
 
 **1️⃣ Clone and Navigate**
 ```bash
-git clone <your-repo-url>
-cd phase-1
+git clone https://github.com/elewashy/DEPI.git
+cd DEPI/Smart_City_Pipeline_Milestone_2
 ```
 
 **2️⃣ Start All Services**
@@ -509,7 +507,7 @@ docker exec -u airflow data-pipeline-compose-airflow-webserver-1 \
 ## 📁 Project Structure
 
 ```
-phase-1/
+Smart_City_Pipeline_Milestone_2/
 ├── 📄 README.md                    # This file - project overview
 ├── 📄 docker-compose.yml            # Infrastructure (25+ containers)
 ├── 📄 docker-compose.env            # Environment configuration
@@ -539,11 +537,7 @@ phase-1/
 │   ├── PROJECT_SUMMARY.md           # Technical overview
 │   ├── STARTUP_GUIDE.md             # Quick startup instructions
 │   ├── DEMO_OUTPUT.md               # Sample outputs and results
-│   ├── ARCHITECTURE.md              # Detailed architecture
-│   ├── CONTRIBUTING.md              # Contribution guidelines
-│   ├── DEPLOYMENT.md                # Production deployment
-│   ├── DATA_SCHEMA.md               # Complete schema reference
-│   └── PERFORMANCE.md               # Performance benchmarks
+
 │
 ├── 📂 notebooks/                    # Jupyter notebooks
 │   └── data_exploration.ipynb       # Interactive analysis
@@ -805,7 +799,7 @@ graph TD
 For additional help:
 - 📝 Check [COMMANDS.md](docs/COMMANDS.md) for complete command reference
 - 🚀 See [STARTUP_GUIDE.md](docs/STARTUP_GUIDE.md) for detailed setup
-- 🏗️ Review [ARCHITECTURE.md](docs/ARCHITECTURE.md) for system details
+
 - 💬 Open an issue on GitHub
 
 ---
@@ -818,31 +812,20 @@ For additional help:
 | [PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md) | Technical overview and ML models |
 | [STARTUP_GUIDE.md](docs/STARTUP_GUIDE.md) | Step-by-step startup instructions |
 | [DEMO_OUTPUT.md](docs/DEMO_OUTPUT.md) | Sample outputs and demo walkthrough |
-| [ARCHITECTURE.md](docs/ARCHITECTURE.md) | Detailed system architecture |
-| [CONTRIBUTING.md](docs/CONTRIBUTING.md) | Contribution guidelines |
-| [DEPLOYMENT.md](docs/DEPLOYMENT.md) | Production deployment guide |
-| [DATA_SCHEMA.md](docs/DATA_SCHEMA.md) | Complete schema reference |
-| [PERFORMANCE.md](docs/PERFORMANCE.md) | Performance benchmarks and tuning |
+
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](docs/CONTRIBUTING.md) for details.
+We welcome contributions! Please open an issue or pull request on GitHub.
 
-### Quick Contribution Guide
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
 
 ### Development Setup
 
 ```bash
 # Clone your fork
-git clone https://github.com/your-username/smart-city-pipeline.git
+git clone https://github.com/elewashy/DEPI.git
 cd smart-city-pipeline
 
 # Create virtual environment
@@ -855,31 +838,7 @@ pip install -r requirements.txt
 # Start development environment
 docker-compose up -d
 ```
-
 ---
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2025 Smart City IoT Project
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
-
----
-
 ## 🙏 Acknowledgments
 
 This project leverages outstanding open-source technologies:
@@ -889,10 +848,6 @@ This project leverages outstanding open-source technologies:
 - **Confluent Platform** - Kafka ecosystem (Schema Registry, ksqlDB)
 - **Jupyter Project** - Interactive notebooks
 - **Python Community** - kafka-python and other libraries
-
-### Built With ❤️ for Smart Cities
-
-Special thanks to the open-source community for making enterprise-grade data engineering accessible to everyone.
 
 ---
 
@@ -906,6 +861,6 @@ Made with ❤️ by the Smart City IoT Team
 
 **Status**: ✅ Production Ready | **Last Updated**: November 29, 2025
 
-[Report Bug](https://github.com/your-repo/issues) • [Request Feature](https://github.com/your-repo/issues) • [Documentation](docs/)
+[Report Bug](https://github.com/elewashy/DEPI/issues) • [Request Feature](https://github.com/elewashy/DEPI/issues) • [Documentation](docs/)
 
 </div>
