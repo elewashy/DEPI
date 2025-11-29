@@ -824,7 +824,7 @@ We welcome contributions! Please open an issue or pull request on GitHub.
 ```bash
 # Clone your fork
 git clone https://github.com/elewashy/DEPI.git
-cd smart-city-pipeline
+cd DEPI/Smart_City_Pipeline_Milestone_2
 
 # Create virtual environment
 python -m venv venv
