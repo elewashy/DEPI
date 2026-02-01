@@ -59,7 +59,7 @@ The **Smart City Data Engineering Project** is a comprehensive graduation projec
 ### Project Scope
 
 ```mermaid
-%%{init: {'theme': 'forest'}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#3498DB', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#2980B9', 'secondaryColor': '#E67E22', 'secondaryTextColor': '#000000', 'tertiaryColor': '#9B59B6', 'tertiaryTextColor': '#ffffff', 'lineColor': '#2C3E50', 'fontFamily': 'arial', 'fontSize': '14px'}}}%%
 mindmap
   root((Smart City<br/>Project))
     Milestone 1
