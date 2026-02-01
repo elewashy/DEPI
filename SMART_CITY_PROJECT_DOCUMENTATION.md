@@ -61,6 +61,7 @@ The **Smart City Data Engineering Project** is a comprehensive graduation projec
 ```mermaid
 mindmap
   root((Smart City<br/>Project))
+    ::icon(fa fa-city)
     Milestone 1
       Batch ETL
       Data Warehouse
@@ -76,6 +77,68 @@ mindmap
       Apache Hive
       Trino Query Engine
       Airflow Orchestration
+```
+
+```css
+/* Mindmap Color Styling (for compatible renderers) */
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#2C3E50', 'primaryTextColor': '#fff', 'primaryBorderColor': '#1A252F', 'lineColor': '#3498DB', 'secondaryColor': '#E74C3C', 'tertiaryColor': '#27AE60'}}}%%
+flowchart TB
+    subgraph ROOT["🏙️ SMART CITY PROJECT"]
+        direction TB
+        CENTER[Complete Data<br/>Engineering Solution]
+    end
+
+    subgraph M1["🔷 MILESTONE 1: Batch ETL"]
+        direction LR
+        M1A[📊 Data Warehouse]
+        M1B[🔄 Medallion Architecture]
+        M1C[💾 SQL / Python / Talend]
+        M1D[⏰ Airflow Orchestration]
+    end
+
+    subgraph M2A["🟠 MILESTONE 2A: Real-Time"]
+        direction LR
+        M2A1[📡 Apache Kafka]
+        M2A2[⚡ Spark Streaming]
+        M2A3[🤖 Machine Learning]
+        M2A4[📁 HDFS Storage]
+    end
+
+    subgraph M2B["🟣 MILESTONE 2B: Big Data"]
+        direction LR
+        M2B1[🐝 Apache Hive]
+        M2B2[🔍 Trino Queries]
+        M2B3[🔄 Spark ETL]
+        M2B4[📊 Analytics Ready]
+    end
+
+    CENTER --> M1
+    CENTER --> M2A
+    CENTER --> M2B
+
+    style ROOT fill:#2C3E50,stroke:#1A252F,stroke-width:3px,color:#fff
+    style CENTER fill:#34495E,stroke:#2C3E50,stroke-width:2px,color:#fff
+
+    style M1 fill:#3498DB,stroke:#2980B9,stroke-width:2px,color:#fff
+    style M1A fill:#5DADE2,stroke:#3498DB,color:#000
+    style M1B fill:#5DADE2,stroke:#3498DB,color:#000
+    style M1C fill:#5DADE2,stroke:#3498DB,color:#000
+    style M1D fill:#5DADE2,stroke:#3498DB,color:#000
+
+    style M2A fill:#E67E22,stroke:#D35400,stroke-width:2px,color:#fff
+    style M2A1 fill:#F39C12,stroke:#E67E22,color:#000
+    style M2A2 fill:#F39C12,stroke:#E67E22,color:#000
+    style M2A3 fill:#F39C12,stroke:#E67E22,color:#000
+    style M2A4 fill:#F39C12,stroke:#E67E22,color:#000
+
+    style M2B fill:#9B59B6,stroke:#8E44AD,stroke-width:2px,color:#fff
+    style M2B1 fill:#BB8FCE,stroke:#9B59B6,color:#000
+    style M2B2 fill:#BB8FCE,stroke:#9B59B6,color:#000
+    style M2B3 fill:#BB8FCE,stroke:#9B59B6,color:#000
+    style M2B4 fill:#BB8FCE,stroke:#9B59B6,color:#000
 ```
 
 ---
