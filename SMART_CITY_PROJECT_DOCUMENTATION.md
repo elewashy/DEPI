@@ -59,66 +59,24 @@ The **Smart City Data Engineering Project** is a comprehensive graduation projec
 ### Project Scope
 
 ```mermaid
-graph TB
-    ROOT[🏙️ Smart City<br/>Data Engineering Project]
-
-    M1["🔷 Milestone 1<br/><b>Batch ETL & DWH</b>"]
-    M2A["🟠 Milestone 2A<br/><b>Real-Time Streaming</b>"]
-    M2B["🟣 Milestone 2B<br/><b>Big Data Analytics</b>"]
-
-    M1_1[Batch ETL]
-    M1_2[Data Warehouse]
-    M1_3[Medallion Architecture]
-    M1_4[SQL/Python/Talend]
-
-    M2A_1[Real-time Streaming]
-    M2A_2[Apache Kafka]
-    M2A_3[Spark Streaming]
-    M2A_4[Machine Learning]
-
-    M2B_1[Big Data ETL]
-    M2B_2[Apache Hive]
-    M2B_3[Trino Query Engine]
-    M2B_4[Airflow Orchestration]
-
-    ROOT --> M1
-    ROOT --> M2A
-    ROOT --> M2B
-
-    M1 --> M1_1
-    M1 --> M1_2
-    M1 --> M1_3
-    M1 --> M1_4
-
-    M2A --> M2A_1
-    M2A --> M2A_2
-    M2A --> M2A_3
-    M2A --> M2A_4
-
-    M2B --> M2B_1
-    M2B --> M2B_2
-    M2B --> M2B_3
-    M2B --> M2B_4
-
-    style ROOT fill:#2C3E50,stroke:#1A252F,stroke-width:4px,color:#fff,font-weight:bold,font-size:16px
-
-    style M1 fill:#3498DB,stroke:#2980B9,stroke-width:3px,color:#fff,font-size:14px
-    style M1_1 fill:#5DADE2,stroke:#3498DB,stroke-width:2px,color:#000
-    style M1_2 fill:#5DADE2,stroke:#3498DB,stroke-width:2px,color:#000
-    style M1_3 fill:#5DADE2,stroke:#3498DB,stroke-width:2px,color:#000
-    style M1_4 fill:#5DADE2,stroke:#3498DB,stroke-width:2px,color:#000
-
-    style M2A fill:#E67E22,stroke:#D35400,stroke-width:3px,color:#fff,font-size:14px
-    style M2A_1 fill:#F39C12,stroke:#E67E22,stroke-width:2px,color:#000
-    style M2A_2 fill:#F39C12,stroke:#E67E22,stroke-width:2px,color:#000
-    style M2A_3 fill:#F39C12,stroke:#E67E22,stroke-width:2px,color:#000
-    style M2A_4 fill:#F39C12,stroke:#E67E22,stroke-width:2px,color:#000
-
-    style M2B fill:#9B59B6,stroke:#8E44AD,stroke-width:3px,color:#fff,font-size:14px
-    style M2B_1 fill:#BB8FCE,stroke:#9B59B6,stroke-width:2px,color:#000
-    style M2B_2 fill:#BB8FCE,stroke:#9B59B6,stroke-width:2px,color:#000
-    style M2B_3 fill:#BB8FCE,stroke:#9B59B6,stroke-width:2px,color:#000
-    style M2B_4 fill:#BB8FCE,stroke:#9B59B6,stroke-width:2px,color:#000
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#3498DB', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#2980B9', 'secondaryColor': '#E67E22', 'secondaryTextColor': '#000000', 'tertiaryColor': '#9B59B6', 'tertiaryTextColor': '#ffffff', 'lineColor': '#2C3E50', 'fontFamily': 'arial', 'fontSize': '14px'}}}%%
+mindmap
+  root((Smart City<br/>Project))
+    Milestone 1
+      Batch ETL
+      Data Warehouse
+      Medallion Architecture
+      SQL/Python/Talend
+    Milestone 2A
+      Real-time Streaming
+      Apache Kafka
+      Spark Streaming
+      Machine Learning
+    Milestone 2B
+      Big Data ETL
+      Apache Hive
+      Trino Query Engine
+      Airflow Orchestration
 ```
 
 ```mermaid
